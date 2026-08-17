@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64">
+  <defs>
+    <linearGradient id="keraj-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect width="64" height="64" rx="15" fill="url(#keraj-g)"/>
+    <rect x="1.75" y="1.75" width="60.5" height="60.5" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.5"/>
+    <path d="M24 15v34M24 22l21-8M24 42l21 8" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="'Space Grotesk','Segoe UI',Arial,sans-serif">
+    <text x="82" y="27" font-size="27" font-weight="700" letter-spacing="1.5" fill="#f8fafc">KERAJ TRADING</text>
+    <text x="82" y="45" font-size="10.5" font-weight="600" letter-spacing="3.6" fill="#94a3b8">ONE MEMBER PLC</text>
+    <text x="82" y="59" font-size="10" font-weight="500" letter-spacing="2.6" fill="#67e8f9">CHINA ⇄ ETHIOPIA · SEA · AIR · RAIL</text>
+  </g>
+</svg>

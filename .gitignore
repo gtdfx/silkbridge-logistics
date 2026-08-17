@@ -14,3 +14,8 @@ Thumbs.db
 
 .vercel
 .env*.local
+
+# Temp tooling
+node_modules/
+package-lock.json
+keraj-logo.tmp.js
