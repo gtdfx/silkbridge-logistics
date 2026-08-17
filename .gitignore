@@ -11,3 +11,6 @@ Thumbs.db
 
 # Freebuff internal
 .freebuff/
+
+.vercel
+.env*.local
