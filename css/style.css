@@ -1424,6 +1424,78 @@ input[type="range"]::-webkit-slider-thumb {
   .footer-bottom { justify-content: center; text-align: center; }
 }
 
+/* ---------- Small phones (compact, not bulky) ---------- */
+
+@media (max-width: 640px) {
+  .container { width: min(var(--container), 100% - 36px); }
+
+  .hero { padding: 100px 0 48px; }
+  .hero h1 { font-size: clamp(2.2rem, 8.6vw, 3.1rem); margin-bottom: 16px; }
+  .hero .lead { margin-bottom: 26px; font-size: 15px; line-height: 1.6; }
+  .hero-ctas { flex-direction: column; align-items: stretch; margin-bottom: 30px; }
+  .hero-ctas .btn { width: 100%; }
+  .hero-trust { gap: 8px; }
+  .hero-trust .chip { font-size: 12px; padding: 7px 13px; }
+
+  .route-card { padding: 18px 12px; }
+  .route-card .mini-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 14px;
+    margin-bottom: 8px;
+  }
+  .mini-stat { padding: 6px 8px; }
+  .mini-stat .num { font-size: 1.1rem; }
+  .mini-stat .lbl { font-size: 9.5px; letter-spacing: 0.08em; }
+  .route-float { padding: 6px 10px; font-size: 11px; border-radius: 10px; }
+  .route-float svg { display: none; }
+  .route-float:last-child { display: none; }
+
+  .section { padding: 58px 0; }
+  .section-tight { padding: 42px 0; }
+  .page-hero { padding: 122px 0 46px; }
+  .page-hero h1 { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
+
+  .card { padding: 22px 20px; }
+  .step { padding: 24px 20px; }
+  .step .step-num { font-size: 2.4rem; margin-bottom: 12px; }
+  .stat-card { padding: 26px 12px; }
+  .testi { padding: 24px 20px; }
+  .price-card { padding: 26px 20px; }
+  .trust-item { padding: 22px 12px; }
+  .team-card, .office-card { padding: 24px 18px; }
+  .contact-mini { padding: 18px; }
+  .cta-band { padding: 38px 20px; border-radius: 20px; }
+  .cta-actions .btn { width: 100%; }
+  .btn-lg { padding: 15px 26px; }
+
+  .services-grid, .testi-grid, .price-grid, .vas-grid, .team-grid, .office-grid,
+  .steps, .sample-cards, .contact-cards, .faq-list { gap: 14px; }
+
+  .calc-panel, .result-panel, .form-panel { padding: 20px 16px; }
+  .calc-field { margin-bottom: 20px; }
+  .seg-btn { padding: 10px 8px; font-size: 12.5px; }
+  .seg-btn svg { width: 16px; height: 16px; }
+  .switch-row { padding: 12px 14px; }
+
+  .ticker { padding: 13px 0; }
+  .ticker-item { font-size: 13px; gap: 9px; }
+
+  .site-footer { padding-top: 50px; }
+  .footer-grid { gap: 26px; padding-bottom: 40px; }
+  .footer-bottom { padding: 18px 0; font-size: 12px; }
+
+  .route-table th, .route-table td { padding: 14px 16px; font-size: 13.5px; }
+  .route-table th { font-size: 11px; }
+
+  .track-steps { padding: 20px 20px 6px; }
+  .track-timeline { padding: 18px 20px 22px; }
+  .track-head { padding: 18px 20px; }
+
+  .price-amt { font-size: 1.8rem; }
+  .h2 { letter-spacing: -0.025em; }
+}
+
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
