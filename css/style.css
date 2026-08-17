@@ -24,8 +24,8 @@
   --radius: 18px;
   --radius-lg: 26px;
   --shadow: 0 24px 70px -30px rgba(0, 0, 0, 0.75);
-  --font-d: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-b: "Inter", system-ui, sans-serif;
+  --font-d: "Sora", "Manrope", system-ui, sans-serif;
+  --font-b: "Manrope", "Sora", system-ui, sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --container: 1200px;
 }
@@ -162,6 +162,18 @@ h1, h2, h3, h4 {
 
 .grad-text {
   background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.grad-cn {
+  background: linear-gradient(100deg, #de2910, #ffde00 60%, #de2910);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.grad-et {
+  background: linear-gradient(100deg, #078930, #fcdd09 50%, #da121a);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -312,14 +324,6 @@ h1, h2, h3, h4 {
   height: 74px;
 }
 
-.site-header .brand {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 .brand {
   display: flex;
   align-items: center;
@@ -351,7 +355,7 @@ h1, h2, h3, h4 {
 .main-nav a:hover { color: var(--text); background: rgba(255, 255, 255, 0.05); }
 .main-nav a.active { color: var(--cyan); background: rgba(34, 211, 238, 0.1); }
 
-.nav-actions { display: flex; align-items: center; gap: 14px; margin-left: auto; }
+.nav-actions { display: flex; align-items: center; gap: 14px; }
 
 .nav-toggle {
   display: none;
@@ -1387,6 +1391,12 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 @media (max-width: 760px) {
+  .site-header .brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-actions { margin-left: auto; }
   .main-nav {
     position: fixed;
     inset: 0;
