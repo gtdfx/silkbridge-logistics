@@ -1,4 +1,4 @@
-# SilkBridge Logistics — China ⇄ Ethiopia
+# Keraj Trading One Member PLC — China ⇄ Ethiopia
 
 A modern, futuristic marketing website for a freight & logistics company that ships cargo from China to Ethiopia (sea, air, rail and express), with customs clearance and door-to-door delivery.
 
@@ -11,7 +11,7 @@ A modern, futuristic marketing website for a freight & logistics company that sh
 | Home | `index.html` | Animated route visual (Shanghai → Djibouti → Addis Ababa), stats, services, routes & rates table, testimonials, FAQ |
 | Services | `services.html` | Sea FCL/LCL, Air, Rail+Road, Express, Customs, Warehousing — with pricing cards, value-added services, industries |
 | Get a Quote | `quote.html` | Interactive door-to-door cost calculator (live USD + ETB estimates) |
-| Track Shipment | `tracking.html` | Demo tracker with milestone timeline (try `SB-88421-CN-ET`) |
+| Track Shipment | `tracking.html` | Demo tracker with milestone timeline (try `KT-88421-CN-ET`) |
 | About | `about.html` | Story, values, milestone timeline, team, offices |
 | Contact | `contact.html` | Contact form, office cards, WhatsApp, FAQ |
 

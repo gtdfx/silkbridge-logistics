@@ -1,5 +1,5 @@
 /* ============================================================
-   SILKBRIDGE LOGISTICS — shared interactions
+   KERAJ TRADING — shared interactions
    ============================================================ */
 
 (function () {
@@ -356,9 +356,9 @@
   };
 
   const SAMPLES = [
-    { id: "SB-88421-CN-ET", status: "In Transit · On the Sea", eta: "ETA Aug 20" },
-    { id: "SB-90377-CN-ET", status: "Customs Clearance", eta: "ETA Aug 18" },
-    { id: "SB-81256-CN-ET", status: "Delivered Jul 28", eta: "POD ready" },
+    { id: "KT-88421-CN-ET", status: "In Transit · On the Sea", eta: "ETA Aug 20" },
+    { id: "KT-90377-CN-ET", status: "Customs Clearance", eta: "ETA Aug 18" },
+    { id: "KT-81256-CN-ET", status: "Delivered Jul 28", eta: "POD ready" },
   ];
 
   function renderTracking(id) {
@@ -405,7 +405,7 @@
       e.preventDefault();
       const id = trackInput.value.trim();
       if (!id) {
-        showToast("Enter a tracking number (e.g. SB-88421-CN-ET).");
+        showToast("Enter a tracking number (e.g. KT-88421-CN-ET).");
         return;
       }
       renderTracking(id);
