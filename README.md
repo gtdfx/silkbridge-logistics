@@ -1,6 +1,6 @@
 # Keraj Trading One Member PLC — China ⇄ Ethiopia
 
-A modern, futuristic marketing website for a freight & logistics company that ships cargo from China to Ethiopia (sea, air, rail and express), with customs clearance and door-to-door delivery.
+A modern, futuristic marketing website for a freight & logistics company that ships cargo from China to Ethiopia (sea and air), with customs clearance, dry-port trucking and door-to-door delivery.
 
 > ⚠️ **Sample data** — all company details, rates, contacts, team members and testimonials are illustrative placeholders. Swap in the real company information before going live.
 
@@ -9,7 +9,7 @@ A modern, futuristic marketing website for a freight & logistics company that sh
 | Page | Path | Highlights |
 | --- | --- | --- |
 | Home | `index.html` | Animated route visual (Shanghai → Djibouti → Addis Ababa), stats, services, routes & rates table, testimonials, FAQ |
-| Services | `services.html` | Sea FCL/LCL, Air, Rail+Road, Express, Customs, Warehousing — with pricing cards, value-added services, industries |
+| Services | `services.html` | Sea FCL/LCL, Air, Dry-Port Trucking, Customs, Warehousing — with pricing cards, value-added services, industries |
 | Get a Quote | `quote.html` | Interactive door-to-door cost calculator (live USD + ETB estimates) |
 | Track Shipment | `tracking.html` | Demo tracker with milestone timeline (try `KT-88421-CN-ET`) |
 | About | `about.html` | Story, values, milestone timeline, team, offices |

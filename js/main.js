@@ -208,15 +208,15 @@
     insurance: false,
     pickup: false,
     customs: true,
+    truck: true, // last-mile trucking to the door, included by default
   };
 
   const RATES = {
     sea: { base: 2.6, min: 150, days: "38 – 44", label: "Sea Freight (LCL)" },
     fcl20: { base: 3200, min: 3200, days: "38 – 44", label: "Sea Freight 20ft FCL" },
     fcl40: { base: 4850, min: 4850, days: "38 – 44", label: "Sea Freight 40ft FCL" },
-    rail: { base: 4.4, min: 260, days: "18 – 24", label: "Rail Freight" },
     air: { base: 6.9, min: 320, days: "4 – 6", label: "Air Freight" },
-    express: { base: 9.8, min: 400, days: "5 – 8", label: "Door-to-Door Express" },
+    truck: { base: 180, min: 180, days: "1 – 3", label: "Dry-Port Trucking" },
   };
 
   const ORIGIN_MULT = {
@@ -236,6 +236,23 @@
     bahir: 1.24,
   };
 
+  // Last-mile trucking from the dry port — priced per load by destination
+  const TRUCK_RATES = {
+    modjo: 90, // dry-port / intra-city delivery
+    addis: 180, // Modjo → Addis Ababa
+    hawas: 250, // Modjo → Hawassa
+    dire: 280, // Modjo → Dire Dawa
+    bahir: 340, // Modjo → Bahir Dar
+  };
+
+  const TRUCK_LANES = {
+    modjo: "Dry-port / intra-city",
+    addis: "Modjo → Addis Ababa",
+    hawas: "Modjo → Hawassa",
+    dire: "Modjo → Dire Dawa",
+    bahir: "Modjo → Bahir Dar",
+  };
+
   const EXCHANGE = 118.5; // sample USD -> ETB
 
   function fmtUSD(v) {
@@ -246,21 +263,25 @@
     const mode = calc.mode;
     const rate = RATES[mode];
     if (!rate) return;
-    const om = ORIGIN_MULT[calc.origin] || 1;
-    const dm = DEST_MULT[calc.destination] || 1;
+    const isTruck = mode === "truck";
+    const om = isTruck ? 1 : ORIGIN_MULT[calc.origin] || 1;
+    const dm = isTruck ? 1 : DEST_MULT[calc.destination] || 1;
 
     let freight;
-    if (mode === "fcl20" || mode === "fcl40") {
+    if (isTruck) {
+      freight = TRUCK_RATES[calc.destination] || 180;
+    } else if (mode === "fcl20" || mode === "fcl40") {
       freight = rate.base;
     } else {
       freight = Math.max(rate.min, calc.weight * rate.base);
     }
     freight *= om * dm;
 
-    const customs = calc.customs ? Math.max(120, freight * 0.06) : 0;
+    const customs = calc.customs && !isTruck ? Math.max(120, freight * 0.06) : 0;
     const insurance = calc.insurance ? Math.max(40, freight * 0.012) : 0;
-    const pickup = calc.pickup ? (calc.weight > 300 ? 380 : 260) : 0;
-    const total = freight + customs + insurance + pickup;
+    const pickup = calc.pickup && !isTruck ? (calc.weight > 300 ? 380 : 260) : 0;
+    const truckCost = calc.truck && !isTruck ? TRUCK_RATES[calc.destination] || 180 : 0;
+    const total = freight + truckCost + customs + insurance + pickup;
     const etb = Math.round(total * EXCHANGE);
 
     const set = (id, val) => {
@@ -268,9 +289,12 @@
       if (el) el.textContent = val;
     };
     set("calcFreight", fmtUSD(freight));
-    set("calcCustoms", customs ? fmtUSD(customs) : "Included");
+    set("calcCustoms", isTruck ? "Not applicable" : customs ? fmtUSD(customs) : "Included");
     set("calcInsurance", insurance ? fmtUSD(insurance) : "Not selected");
-    set("calcPickup", pickup ? fmtUSD(pickup) : "Not selected");
+    set("calcPickup", isTruck ? "Not applicable" : pickup ? fmtUSD(pickup) : "Not selected");
+    set("calcTruck", isTruck ? "—" : truckCost ? fmtUSD(truckCost) : "Not selected");
+    const laneEl = document.getElementById("calcTruckLane");
+    if (laneEl) laneEl.textContent = TRUCK_LANES[calc.destination] || "Modjo → Addis Ababa";
     set("calcTotal", fmtUSD(total));
     set("calcEtb", etb.toLocaleString("en-US") + " ETB");
     set("calcDays", rate.days);
@@ -279,12 +303,22 @@
     const dep = document.getElementById("calcDep");
     if (dep) dep.textContent = nextDeparture(mode);
     const perKg = document.getElementById("calcPerKg");
-    if (perKg) perKg.textContent = fmtUSD(mode === "fcl20" || mode === "fcl40" ? total : total / calc.weight) + " / kg";
+    if (perKg) {
+      perKg.textContent = isTruck ? fmtUSD(freight) + " / load" : fmtUSD(mode === "fcl20" || mode === "fcl40" ? total : total / calc.weight) + " / kg";
+    }
+  }
+
+  function setTruckUI(truck) {
+    // Last-mile trucking ignores weight, China origin, customs and pickup
+    ["weightField", "originField", "swCustoms", "swPickup", "swTruck", "rowCustoms", "rowPickup", "rowTruck"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = truck ? "none" : "";
+    });
   }
 
   function nextDeparture(mode) {
     const now = new Date();
-    const base = mode === "sea" || mode === "fcl20" || mode === "fcl40" ? 5 : mode === "rail" ? 3 : 1;
+    const base = mode === "sea" || mode === "fcl20" || mode === "fcl40" ? 5 : 1;
     const d = new Date(now);
     d.setDate(d.getDate() + base);
     return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
@@ -297,6 +331,7 @@
         calcPanel.querySelectorAll("[data-mode]").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         calc.mode = btn.dataset.mode;
+        setTruckUI(calc.mode === "truck");
         updateCalc();
       });
     });
@@ -323,6 +358,7 @@
       insuranceToggle: "insurance",
       pickupToggle: "pickup",
       customsToggle: "customs",
+      truckToggle: "truck",
     };
     Object.entries(toggles).forEach(([id, key]) => {
       const el = document.getElementById(id);
@@ -348,7 +384,7 @@
       { t: "Jul 14, 16:40", b: "Picked up — Yiwu Warehouse", s: "Cargo loaded: 128 cartons, 2,340 kg. Awaiting export customs.", done: true },
       { t: "Jul 16, 11:05", b: "Departed Ningbo Port", s: "Vessel MSC ALESSIA V.117E sailed from Ningbo to Djibouti.", done: true },
       { t: "Jul 22, 08:30", b: "Transit — Strait of Malacca", s: "Vessel on schedule. ETA Djibouti: Aug 16.", done: true },
-      { t: "Aug 16, 14:00", b: "Arrived Djibouti Port", s: "Container discharged. Onward to Modjo Dry Port by rail.", done: false },
+      { t: "Aug 16, 14:00", b: "Arrived Djibouti Port", s: "Container discharged. Onward to Modjo Dry Port by truck.", done: false },
       { t: "Aug 18, 10:00", b: "Customs clearance — Modjo", s: "Document processing. Duties estimated: $412.", done: false },
       { t: "Aug 20, 09:00", b: "Out for delivery — Addis Ababa", s: "Truck dispatched to your warehouse in Bole Lemi.", done: false },
       { t: "Aug 20, 16:00", b: "Delivered", s: "Signed by consignee. POD available on request.", done: false },

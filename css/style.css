@@ -621,8 +621,7 @@ h1, h2, h3, h4 {
 }
 .tag-sea { background: rgba(34, 211, 238, 0.12); color: var(--cyan); border: 1px solid rgba(34, 211, 238, 0.3); }
 .tag-air { background: rgba(167, 139, 250, 0.12); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.3); }
-.tag-rail { background: rgba(251, 191, 36, 0.12); color: var(--amber); border: 1px solid rgba(251, 191, 36, 0.3); }
-.tag-express { background: rgba(52, 211, 153, 0.12); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.3); }
+.tag-truck { background: rgba(52, 211, 153, 0.12); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.3); }
 
 /* ---------- Features / split ---------- */
 
@@ -949,6 +948,7 @@ input[type="range"]::-webkit-slider-thumb {
 .switch-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 13px; background: rgba(255,255,255,0.02); }
 .switch-row span { font-size: 14px; color: var(--text); }
 .switch-row small { display: block; color: var(--muted); font-size: 12px; }
+.switch-row small a { color: var(--cyan); text-decoration: underline; text-underline-offset: 2px; }
 .switch { position: relative; width: 46px; height: 26px; flex-shrink: 0; }
 .switch input { opacity: 0; width: 0; height: 0; }
 .slider {
