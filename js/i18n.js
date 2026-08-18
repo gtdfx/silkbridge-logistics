@@ -5,25 +5,22 @@
 
 const translations = {
   en: {
-    "nav.home": "Home",
-    "nav.services": "Services",
-    "nav.quote": "Get a Quote",
-    "nav.track": "Track Order",
-    "nav.about": "About Us",
-    "nav.contact": "Contact",
+    /* Nav */
+    "nav.home": "Home", "nav.services": "Services", "nav.quote": "Get a Quote",
+    "nav.track": "Track Order", "nav.about": "About Us", "nav.contact": "Contact",
     "nav.start": "Start Sourcing",
+    /* Hero */
     "hero.eyebrow": "China → Worldwide · Sourcing · Logistics · Quality",
-    "hero.title.pre": "Your trusted",
-    "hero.title.highlight": "China",
-    "hero.title.mid": "sourcing agent — delivering",
-    "hero.title.end": "worldwide.",
+    "hero.title.pre": "Your trusted", "hero.title.highlight": "China",
+    "hero.title.mid": "sourcing agent — delivering", "hero.title.end": "worldwide.",
     "hero.lead": "We source, verify, inspect and deliver — from Chinese factories to your door, anywhere in the world.",
-    "hero.cta1": "Start sourcing",
-    "hero.cta2": "Explore services",
+    "hero.cta1": "Start sourcing", "hero.cta2": "Explore services",
+    /* Stats */
     "stats.suppliers": "Verified Chinese suppliers in our network",
     "stats.years": "Years sourcing from China",
     "stats.orders": "Orders sourced & delivered",
     "stats.satisfaction": "Client satisfaction rate",
+    /* Services */
     "services.eyebrow": "What we do",
     "services.title": "End-to-end sourcing & logistics.",
     "services.title.grad": "One accountable team.",
@@ -35,25 +32,72 @@ const translations = {
     "services.logistics.title": "Import-Export Logistics",
     "services.logistics.desc": "Sea and air freight, customs clearance and door-to-door delivery — the complete logistics chain handled end to end from China to anywhere in the world.",
     "services.explore": "Explore",
+    /* Categories */
+    "cat.eyebrow": "What we source",
+    "cat.title": "Product categories we",
+    "cat.title.grad": "specialize in",
+    "cat.lead": "We connect you to verified Chinese manufacturers across every major product category — from consumer electronics to industrial machinery.",
+    /* Process */
+    "proc.eyebrow": "How it works",
+    "proc.title": "From your product idea",
+    "proc.title.grad": "to your warehouse",
+    "proc.title.end": "in 4 steps",
+    "proc.lead": "You tell us what you need. We handle the 14,000 km in between — sourcing, verifying, inspecting and delivering.",
+    "proc.s1.title": "Tell us what you need",
+    "proc.s1.desc": "Describe your product, quantity, budget and specifications. We'll match you with the best-fit verified suppliers within 48 hours.",
+    "proc.s2.title": "We source & verify",
+    "proc.s2.desc": "Our Guangzhou team visits factories, checks licenses, reviews production lines and sends you a detailed audit report with photos.",
+    "proc.s3.title": "We inspect & ship",
+    "proc.s3.desc": "Quality control at every stage — samples, during production and pre-shipment. Then sea or air freight with full tracking.",
+    "proc.s4.title": "We deliver to your door",
+    "proc.s4.desc": "Customs clearance, duties paid, delivered to your door. Done.",
+    /* Why us */
+    "why.eyebrow": "Why Keraj Trading",
+    "why.title": "We're not just an agent.",
+    "why.title.grad": "We're your team in China.",
+    "why.lead": "Sourcing from China has its own challenges — language barriers, factory verification, quality risks, logistics complexity. We've been navigating this corridor for over a decade, and it shows in every shipment that arrives intact.",
+    /* Testimonials */
+    "testi.eyebrow": "Client stories",
+    "testi.title": "Trusted by businesses",
+    "testi.title.grad": "worldwide",
+    "testi.lead": "Importers, retailers, manufacturers and trading houses rely on Keraj Trading as their sourcing partner in China.",
+    /* FAQ */
+    "faq.eyebrow": "FAQ",
+    "faq.title": "Sourcing from China,",
+    "faq.title.grad": "answered",
+    "faq.q1": "How do you verify Chinese suppliers?",
+    "faq.q2": "Can I visit the factory before ordering?",
+    "faq.q3": "Do you handle private label and OEM orders?",
+    "faq.q4": "What's the minimum order quantity (MOQ)?",
+    "faq.q5": "How does quality control work?",
+    "faq.q6": "What products can you source?",
+    /* CTA */
+    "cta.title": "Ready to start",
+    "cta.title.grad": "sourcing from China",
+    "cta.title.end": "?",
+    "cta.desc": "Get a free sourcing consultation — we'll match you with verified suppliers, provide factory audit reports, and price your full order including freight and delivery. No obligations, no jargon.",
+    "cta.btn1": "Start sourcing now",
+    "cta.btn2": "Talk to a specialist",
+    "cta.mini": "Free consultation · Response within 24 hours · WhatsApp: +251 91 187 6159",
+    /* Footer */
+    "footer.services": "Services",
+    "footer.categories": "Product Categories",
+    "footer.contact": "Contact",
+    "footer.subscribe": "Subscribe for sourcing insights and trade updates.",
+    "footer.copyright": "© 2026 Keraj Trading One Member PLC. All rights reserved.",
+    /* Float */
     "float.quote": "Free Quote",
   },
 
   zh: {
-    "nav.home": "首页",
-    "nav.services": "服务",
-    "nav.quote": "获取报价",
-    "nav.track": "订单追踪",
-    "nav.about": "关于我们",
-    "nav.contact": "联系我们",
+    "nav.home": "首页", "nav.services": "服务", "nav.quote": "获取报价",
+    "nav.track": "订单追踪", "nav.about": "关于我们", "nav.contact": "联系我们",
     "nav.start": "开始采购",
     "hero.eyebrow": "中国 → 全球 · 采购 · 物流 · 质量",
-    "hero.title.pre": "您值得信赖的",
-    "hero.title.highlight": "中国",
-    "hero.title.mid": "采购代理 — 服务",
-    "hero.title.end": "全球。",
+    "hero.title.pre": "您值得信赖的", "hero.title.highlight": "中国",
+    "hero.title.mid": "采购代理 — 服务", "hero.title.end": "全球。",
     "hero.lead": "我们负责采购、验证、检验和交付 — 从中国工厂直达您家门口，覆盖全球任何地方。",
-    "hero.cta1": "开始采购",
-    "hero.cta2": "探索服务",
+    "hero.cta1": "开始采购", "hero.cta2": "探索服务",
     "stats.suppliers": "我们网络中的认证中国供应商",
     "stats.years": "年中国采购经验",
     "stats.orders": "已采购和交付的订单",
@@ -69,25 +113,64 @@ const translations = {
     "services.logistics.title": "进出口物流",
     "services.logistics.desc": "海运和空运、清关和门到门配送 — 从中国到世界各地的完整物流链。",
     "services.explore": "了解详情",
+    "cat.eyebrow": "我们采购的产品",
+    "cat.title": "我们专长的",
+    "cat.title.grad": "产品类别",
+    "cat.lead": "我们将您与经过验证的中国制造商连接到每个主要产品类别 — 从消费电子产品到工业机械。",
+    "proc.eyebrow": "合作流程",
+    "proc.title": "从您的产品构想",
+    "proc.title.grad": "到您的仓库",
+    "proc.title.end": "只需4步",
+    "proc.lead": "您告诉我们需求，我们负责中间14,000公里的采购、验证、检验和交付。",
+    "proc.s1.title": "告诉我们您的需求",
+    "proc.s1.desc": "描述您的产品、数量、预算和规格。我们将在48小时内为您匹配最合适的认证供应商。",
+    "proc.s2.title": "我们采购并验证",
+    "proc.s2.desc": "我们的广州团队拜访工厂、检查执照、审查生产线，并向您发送带有照片的详细审计报告。",
+    "proc.s3.title": "我们检验并发货",
+    "proc.s3.desc": "每个阶段的质量控制 — 样品、生产中和装运前。然后通过海运或空运全程追踪。",
+    "proc.s4.title": "我们送到您家门口",
+    "proc.s4.desc": "清关、缴纳关税、送货到家。完成。",
+    "why.eyebrow": "为什么选择Keraj Trading",
+    "why.title": "我们不仅仅是代理。",
+    "why.title.grad": "我们是您在中国的团队。",
+    "why.lead": "从中国采购面临诸多挑战 — 语言障碍、工厂验证、质量风险、物流复杂性。我们在这个领域深耕超过十年，每一次完好无损的发货都证明了这一点。",
+    "testi.eyebrow": "客户故事",
+    "testi.title": "受到全球企业",
+    "testi.title.grad": "的信赖",
+    "testi.lead": "进口商、零售商、制造商和贸易公司信赖Keraj Trading作为他们在中国的采购合作伙伴。",
+    "faq.eyebrow": "常见问题",
+    "faq.title": "关于中国采购的",
+    "faq.title.grad": "常见问题解答",
+    "faq.q1": "你们如何验证中国供应商？",
+    "faq.q2": "下单前可以参观工厂吗？",
+    "faq.q3": "你们处理自有品牌和OEM订单吗？",
+    "faq.q4": "最低起订量（MOQ）是多少？",
+    "faq.q5": "质量控制如何运作？",
+    "faq.q6": "你们能采购哪些产品？",
+    "cta.title": "准备好开始",
+    "cta.title.grad": "从中国采购",
+    "cta.title.end": "了吗？",
+    "cta.desc": "获取免费的采购咨询 — 我们将为您匹配认证供应商，提供工厂审计报告，并为您包含运费和配送在内的完整订单报价。无义务、无行话。",
+    "cta.btn1": "立即开始采购",
+    "cta.btn2": "与专家交谈",
+    "cta.mini": "免费咨询 · 24小时内回复 · WhatsApp: +251 91 187 6159",
+    "footer.services": "服务",
+    "footer.categories": "产品类别",
+    "footer.contact": "联系我们",
+    "footer.subscribe": "订阅采购洞察和贸易更新。",
+    "footer.copyright": "© 2026 Keraj Trading 一人有限责任公司。保留所有权利。",
     "float.quote": "免费报价",
   },
 
   am: {
-    "nav.home": "መነሻ",
-    "nav.services": "አገልግሎቶች",
-    "nav.quote": "ዋጋ ያግኙ",
-    "nav.track": "ትዕዛዝ ተከታተል",
-    "nav.about": "ስለ እኛ",
-    "nav.contact": "ያግኙን",
+    "nav.home": "መነሻ", "nav.services": "አገልግሎቶች", "nav.quote": "ዋጋ ያግኙ",
+    "nav.track": "ትዕዛዝ ተከታተል", "nav.about": "ስለ እኛ", "nav.contact": "ያግኙን",
     "nav.start": "ግብይት ጀምር",
     "hero.eyebrow": "ቻይና → ዓለም አቀፍ · ግብይት · ሎጂስቲክስ · ጥራት",
-    "hero.title.pre": "የእርስዎ ታማኝ",
-    "hero.title.highlight": "ቻይና",
-    "hero.title.mid": "ግብይት ወኪል — ያቀርባል",
-    "hero.title.end": "ዓለም አቀፍ።",
+    "hero.title.pre": "የእርስዎ ታማኝ", "hero.title.highlight": "ቻይና",
+    "hero.title.mid": "ግብይት ወኪል — ያቀርባል", "hero.title.end": "ዓለም አቀፍ።",
     "hero.lead": "እንፈንግላለን፣ እናረጋግጣለን፣ እንፈትጣለን እና እንገብራለን — ከቻይና ፋብሪካዎች እስከ የእርስዎ በር፣ በዓለም ዛሬም ቦታ ላይ።",
-    "hero.cta1": "ግብይት ጀምር",
-    "hero.cta2": "አገልግሎቶች ያስሱ",
+    "hero.cta1": "ግብይት ጀምር", "hero.cta2": "አገልግሎቶች ያስሱ",
     "stats.suppliers": "በኔትዎርኩ ውስጥ ያሉ የተረጋገጡ ቻይና ሻጮች",
     "stats.years": "ከቻይና የግብይት ዓመታት",
     "stats.orders": "የተፈተኑ እና የተላኩ ትዕዛዞች",
@@ -97,12 +180,58 @@ const translations = {
     "services.title.grad": "አንድ ተጠያቂ ቡድን።",
     "services.lead": "ማንኛውም ነገር እየተፈተኑ — ኤሌክትሮኒክስ፣ ማሽኔሪ፣ የግንባታ ቁሳቁሶች ወይም የደንበኛ ምርቶች — በቻይና ትክክለኛውን ፋብሪካ ማግኘት እስከ የህንፃ በር ማድረስ ድሮ ነው።",
     "services.sourcing.title": "ሻጭ ማሰሻ እና ማረጋገጫ",
-    "services.sourcing.desc": "የቻይና ሻጮችን እንፈንግላለን፣ እናረጋግጣለን — ፈቃዶች፣ የምርት አቅም፣ የወጪ ታሪክ እና ማጣቀሻዎች ከመያዣ በፊት። በጉActivityIndicatorView ውስጥ የፋብሪካ ጎብኝቶች።",
+    "services.sourcing.desc": "የቻይና ሻጮችን እንፈንግላለን፣ እናረጋግጣለን — ፈቃዶች፣ የምርት አቅም፣ የወጪ ታሪክ እና ማጣቀሻዎች ከመያዣ በፊት። በጉዳን ውስጥ የፋብሪካ ጎብኝቶች።",
     "services.qc.title": "ጥራት ቁጥጥር እና የግል ብራንድ",
     "services.qc.desc": "ብዙ ደረጃ QC — ናሙናዎች፣ በምርት ወቅት እና ከመላኪያ በፊት ምርመራዎች። ከፕሮቶታይፕ እስከ የተላለፈ ትዕዛዝ OEM/የግል ብራንድ።",
     "services.logistics.title": "Import-Export ሎጂስቲክስ",
     "services.logistics.desc": "የባህር እና የአוויר ጭነት፣ የዕፀም ጉብኝት እና ከበር እስከ በር ማድረሻ — ከቻይና እስከ ማንኛውም ቦታ ላይ ያለው ሙሉ ሎጂስቲክስ ቀለማምነት።",
     "services.explore": "ያስሱ",
+    "cat.eyebrow": "ምን እንፈንግላለን",
+    "cat.title": "ምርቶች ማ嘁ንቻዎች",
+    "cat.title.grad": "የምን እንሰራቸው",
+    "cat.lead": "ከሁሉም ዋና የምርት ማ嘁ንቻ ላይ በተረጋገጡ የቻይና ተማሪዎችን እንፈትናለን — ከደንበኛ ኤሌክትሮኒክስ እስከ ኢንዱስትሪ ማሽን።",
+    "proc.eyebrow": "እንዴት ይሠራል",
+    "proc.title": "ከየርስዎ ምርት ሀሳብ",
+    "proc.title.grad": "እስከ ሀብር",
+    "proc.title.end": "በ4 ደረጃዎች",
+    "proc.lead": "ምን እንደሚፈልጉ ይስጡን። 14,000 ኪ ሜትር መካከል እንፈንግላለን — ግብይት፣ ማረጋገጫ፣ ማመንጨት እና ማድረሻ።",
+    "proc.s1.title": "ምን እንደሚፈልጉ ይስጡን",
+    "proc.s1.desc": "ምርትዎን፣ መጠን፣ በጀት እና ዝርዝሮች ይጻፉ። በ48 ሰዓት ውስጥ ምርጥ ተረጋገጡ ሻጮችን እንመካከላለን።",
+    "proc.s2.title": "እንፈንግላለን እና እንያረጋግጣለን",
+    "proc.s2.desc": "የጉዳን ቡድናችን ፋብሪካዎችን ይጎብኛል፣ ፈቃዶችን ይፈትሻል፣ የምርት መስመሮችን ይገምግማል እና የፀረ ሪፖርት ከፎቶዎች ጋር ይላካል።",
+    "proc.s3.title": "እንፈትጣለን እና እንላክላለን",
+    "proc.s3.desc": "በሁሉም ደረጃ የጠንቅቆ ማጣቀሻ — ናሙናዎች፣ በምርት ወቅት እና ከመላኪያ በፊት። ከዚያም በFUL ተከታተይ ያለው የባህር ወይም የአוויר ጭነት።",
+    "proc.s4.title": "እስከ በርዎ እንገብራለን",
+    "proc.s4.desc": "የዕፀም ጉብኝት፣ ቀንብል ተከፍሏል፣ እስከ በርዎ ተላልፏል። ተከፍቷል።",
+    "why.eyebrow": "ለምን Keraj Trading",
+    "why.title": "ነጠላ ወኪል ብቻ አይደለንም።",
+    "why.title.grad": "እኛ በቻይና የእርስዎ ቡድን ነን።",
+    "why.lead": "ከቻይና ግብይት ልዩ ችግሮች አሉት — የቋንቋ እንቅፋቶች፣ የፋብሪካ ማረጋገጫ፣ የጥራት አደጋዎች፣ የሎጂስቲክስ ውስንነት። ከጊዜው በኋላ በመካከለኛ በንግድ መካከል እንንዘበት፣ እና ይህም በእያንዳንዱ በተላለፈ ጭነት ላይ ይታያል።",
+    "testi.eyebrow": "የደንበኛ ታሪኮች",
+    "testi.title": "በዓለም አቀፍ",
+    "testi.title.grad": "ንግዶች የተጠበቁ",
+    "testi.lead": "Importers, retailers, manufacturers እና የንግድ ሠፊዎች ከ Keraj Trading እንደ ቻይና ውስጥ የግብይት ባለ学习贯彻 ይመርToMany።",
+    "faq.eyebrow": "ተደጋጋሚ ጥያቄዎች",
+    "faq.title": "ከቻይና ግብይት ስለ",
+    "faq.title.grad": "ተደጋጋሚ ጥያቄዎች",
+    "faq.q1": "የቻይና ሻጮችን እንዴት እንያረጋግጣለን?",
+    "faq.q2": "ትዕዛዝ ከመስጠት በፊት ፋብሪካ መጎብኛል?",
+    "faq.q3": "የግል ብራንድ እና OEM ትዕዛዞችን እንፈtt?",
+    "faq.q4": "አነስተኛ የትዕዛዝ መጠን (MOQ) ስንት ነው?",
+    "faq.q5": "የጥራት ቁጥጥር እንዴት ይሠራል?",
+    "faq.q6": "ምን ዓይነት ምርቶችን መፈተን ይችላሉ?",
+    "cta.title": "መጀመር ለማድረግ ዝግጁ ነዎት",
+    "cta.title.grad": "ከቻይና ግብይት",
+    "cta.title.end": "?",
+    "cta.desc": "ነፃ የግብይት ምክር ያግኙ — ተረጋገጡ ሻጮችን እንመካከላለን፣ የፋብሪካ የፈተና ሪፖርቶችን እንሰጣለን፣ እና ሙሉ ትዕዛዝዎን በጭነት እና በማድረሻ ጋር ያስነባቸዋለን። ምንም ግዴታ የለም፣ ምንም ቋንቋ የለም።",
+    "cta.btn1": "አሁን ግብይት ጀምር",
+    "cta.btn2": "ከሙያ ጋር ይወያዩ",
+    "cta.mini": "ነፃ ምክር · በ24 ሰዓት ውስጥ ምላሽ · WhatsApp: +251 91 187 6159",
+    "footer.services": "አገልግሎቶች",
+    "footer.categories": "የምርት ማ嘁ንቻዎች",
+    "footer.contact": "ያግኙን",
+    "footer.subscribe": "የግብይት ግንዛቤዎችን እና የንግድ ማዘመኛ ይዳስሱ።",
+    "footer.copyright": "© 2026 Keraj Trading One Member PLC. ሁሉም መብቶች የተጠበቁ ናቸው።",
     "float.quote": "ነፃ ዋጋ",
   },
 };
@@ -112,30 +241,20 @@ function setLanguage(lang) {
   if (!translations[lang]) return;
   localStorage.setItem("keraj-lang", lang);
   document.documentElement.setAttribute("lang", lang);
-
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
+    if (translations[lang][key]) el.textContent = translations[lang][key];
   });
-
-  /* Update lang switcher active state */
   document.querySelectorAll(".lang-btn, .lang-link").forEach((el) => {
     el.classList.toggle("active", el.dataset.lang === lang);
   });
 }
 
-/* ---------- Init on DOMContentLoaded ---------- */
+/* ---------- Init ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("keraj-lang") || "en";
   setLanguage(saved);
-
-  /* Click handlers for language buttons and footer links */
   document.querySelectorAll(".lang-btn, .lang-link").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      setLanguage(el.dataset.lang);
-    });
+    el.addEventListener("click", (e) => { e.preventDefault(); setLanguage(el.dataset.lang); });
   });
 });
