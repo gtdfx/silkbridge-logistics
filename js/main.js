@@ -8,7 +8,6 @@
   /* ---------- Header scroll state ---------- */
   const header = document.getElementById("siteHeader");
   const progress = document.getElementById("scrollProgress");
-  const stickyCta = document.getElementById("stickyCta");
   const quoteFloat = document.querySelector(".quote-float");
   const hero = document.querySelector(".hero");
   const onScroll = () => {
@@ -23,37 +22,13 @@
       const h = document.documentElement.scrollHeight - window.innerHeight;
       progress.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
     }
-    if (stickyCta) stickyCta.classList.toggle("visible", scrollY > 400);
     /* White when over dark hero, dark when scrolled past */
     if (quoteFloat) quoteFloat.classList.toggle("on-light", scrollY >= heroBottom - 80);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Urgency countdown timer ---------- */
-  const ctaTimer = document.getElementById("ctaTimer");
-  if (ctaTimer) {
-    // Reset countdown to end of today (midnight)
-    const endOfDay = new Date();
-    endOfDay.setHours(23, 59, 59, 999);
-    function updateTimer() {
-      const now = new Date();
-      const diff = endOfDay - now;
-      if (diff <= 0) {
-        ctaTimer.textContent = "00:00:00";
-        return;
-      }
-      const h = Math.floor(diff / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      ctaTimer.textContent =
-        String(h).padStart(2, "0") + ":" +
-        String(m).padStart(2, "0") + ":" +
-        String(s).padStart(2, "0");
-    }
-    updateTimer();
-    setInterval(updateTimer, 1000);
-  }
+
 
   /* ---------- Mobile nav ---------- */
   const toggle = document.getElementById("navToggle");
