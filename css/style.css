@@ -366,6 +366,7 @@ h1, h2, h3, h4 {
 }
 
 .main-nav-backdrop { display: none; }
+.mobile-nav-close { display: none; }
 .main-nav { display: flex; gap: 6px; }
 .main-nav a {
   position: relative;
