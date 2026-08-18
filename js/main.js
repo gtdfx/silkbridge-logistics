@@ -9,21 +9,23 @@
   const header = document.getElementById("siteHeader");
   const progress = document.getElementById("scrollProgress");
   const stickyCta = document.getElementById("stickyCta");
+  const quoteFloat = document.querySelector(".quote-float");
+  const hero = document.querySelector(".hero");
   const onScroll = () => {
+    const scrollY = window.scrollY;
+    let heroBottom = 0;
+    if (hero) heroBottom = hero.offsetTop + hero.offsetHeight;
     if (header) {
-      header.classList.toggle("scrolled", window.scrollY > 24);
-      /* Toggle on-hero when header overlaps the dark hero section */
-      const hero = document.querySelector(".hero");
-      if (hero) {
-        const heroBottom = hero.offsetTop + hero.offsetHeight;
-        header.classList.toggle("on-hero", window.scrollY < heroBottom - 80);
-      }
+      header.classList.toggle("scrolled", scrollY > 24);
+      header.classList.toggle("on-hero", scrollY < heroBottom - 80);
     }
     if (progress) {
       const h = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+      progress.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
     }
-    if (stickyCta) stickyCta.classList.toggle("visible", window.scrollY > 400);
+    if (stickyCta) stickyCta.classList.toggle("visible", scrollY > 400);
+    /* White when over dark hero, dark when scrolled past */
+    if (quoteFloat) quoteFloat.classList.toggle("on-light", scrollY >= heroBottom - 80);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
