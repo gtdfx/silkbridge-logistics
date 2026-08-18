@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Track Your Shipment — Keraj Trading | China to Ethiopia</title>
-  <meta name="description" content="Track your China to Ethiopia shipment in real time. GPS tracking, milestone alerts and delivery timelines for sea and air freight." />
+  <title>Track Your Order — Keraj Trading | China Sourcing Agent</title>
+  <meta name="description" content="Track your sourcing order and shipment from China to destination. Live updates on supplier sourcing, quality inspections, production and delivery." />
   <link rel="icon" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,12 +26,12 @@
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="quote.html">Get a Quote</a>
-        <a href="tracking.html" class="active">Track Shipment</a>
+        <a href="tracking.html" class="active">Track Order</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
-        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+        <a href="quote.html" class="btn btn-primary btn-sm">Start Sourcing</a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
         </button>
@@ -39,213 +39,219 @@
     </div>
   </header>
 
-  <!-- ======= Page hero ======= -->
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumbs reveal">
         <a href="index.html">Home</a>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-        <span class="cur">Track Shipment</span>
+        <span class="cur">Track Order</span>
       </div>
-      <span class="eyebrow reveal">Live tracking</span>
-      <h1 class="reveal" style="--d:.05s">Where is your cargo <span class="grad-text">right now?</span></h1>
-      <p class="lead reveal" style="--d:.1s">Enter your tracking number to see the live status of your shipment — updated at every milestone from pickup in China to delivery in Ethiopia.</p>
+      <span class="eyebrow reveal">Order tracking</span>
+      <h1 class="reveal" style="--d:.05s">Track your <span class="grad-text">sourcing order</span></h1>
+      <p class="lead reveal" style="--d:.1s">Enter your order ID to see the live status — from supplier sourcing to production, quality inspection and delivery to destination.</p>
     </div>
   </section>
 
-  <!-- ======= Tracker ======= -->
   <section class="section section-tight" style="padding-top:0">
     <div class="container">
       <div class="track-box">
-        <form class="track-form reveal" id="trackForm">
-          <input type="text" class="input" id="trackInput" placeholder="e.g. KT-88421-CN-ET" aria-label="Tracking number" autocomplete="off" />
-          <button type="submit" class="btn btn-primary">Track now
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          </button>
-        </form>
-        <p class="track-hint reveal" style="--d:.05s">Demo mode — try any number, or click one of the samples below.</p>
-        <div class="sample-cards reveal" style="--d:.1s">
-          <div class="glass sample-card" data-sample="KT-88421-CN-ET"><div class="sc-id">KT-88421-CN-ET</div><div class="sc-status">In Transit · On the Sea</div></div>
-          <div class="glass sample-card" data-sample="KT-90377-CN-ET"><div class="sc-id">KT-90377-CN-ET</div><div class="sc-status">Customs Clearance · Modjo</div></div>
-          <div class="glass sample-card" data-sample="KT-81256-CN-ET"><div class="sc-id">KT-81256-CN-ET</div><div class="sc-status">Delivered · Addis Ababa</div></div>
+        <div class="track-form reveal">
+          <input type="text" class="input" id="trackInput" placeholder="Enter order ID (e.g. KJ-2026-0847)" />
+          <a href="#" class="btn btn-primary" onclick="trackOrder(); return false;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            Track
+          </a>
+        </div>
+        <div class="track-hint">
+          <button onclick="loadSample('KJ-2026-0847')">Try sample: KJ-2026-0847</button> · 
+          <button onclick="loadSample('KJ-2026-0912')">KJ-2026-0912</button> · 
+          <button onclick="loadSample('KJ-2026-1005')">KJ-2026-1005</button>
         </div>
 
-        <!-- Tracking result -->
-        <div class="glass tracking-result" id="trackResult">
-          <div class="track-head">
-            <div>
-              <div class="track-id">Shipment <span data-t-id>KT-88421-CN-ET</span></div>
-              <div style="font-size:13px;color:var(--muted);margin-top:4px">Door-to-door · Sea LCL · 2,340 kg · Ningbo → Addis Ababa</div>
+        <div class="tracking-result" id="trackingResult">
+          <div class="glass">
+            <div class="track-head">
+              <div class="track-id">Order <span id="trackId">KJ-2026-0847</span></div>
+              <div class="track-status-pill" id="trackStatus">In Production</div>
             </div>
-            <span class="track-status-pill" data-t-status>In Transit</span>
+            <div class="track-steps" id="trackSteps"></div>
+            <div class="track-timeline" id="trackTimeline"></div>
           </div>
-          <div class="track-steps">
-            <div class="tstep"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div class="tl">Picked Up</div><div class="ts"></div></div>
-            <div class="tstep"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div class="tl">In Transit</div><div class="ts"></div></div>
-            <div class="tstep"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div class="tl">Customs</div><div class="ts"></div></div>
-            <div class="tstep"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div class="tl">Delivered</div><div class="ts"></div></div>
-          </div>
-          <div class="track-timeline"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= Statuses ======= -->
-  <section class="section" style="background:linear-gradient(180deg,transparent,rgba(13,19,36,.35),transparent)">
+  <!-- Milestones -->
+  <section class="section">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow reveal">What each status means</span>
-        <h2 class="h2 reveal" style="--d:.05s">Milestones on the <span class="grad-text">China → Ethiopia journey</span></h2>
+        <span class="eyebrow reveal">Order milestones</span>
+        <h2 class="h2 reveal" style="--d:.05s">From sourcing request <span class="grad-text">to delivered goods</span></h2>
+        <p class="lead reveal" style="--d:.1s">Every order goes through these stages — you'll get updates at every milestone.</p>
       </div>
-      <div class="services-grid">
-        <div class="glass card reveal">
-          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg></div>
-          <h3 class="card-title">Picked Up</h3>
-          <p>Cargo collected from your Chinese supplier. Packing verified, export documents filed, container or air waybill issued. Your tracking number is live from this moment.</p>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Inquiry received</h3>
+          <p>Your sourcing request is reviewed and assigned to a specialist within 24 hours.</p>
         </div>
-        <div class="glass card reveal" style="--d:.06s">
-          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21c.6-5 2-10 5-14M16 21c-2.4-2.6-4-5.4-5-8M5 21h14"/><path d="M12 2a8 8 0 0 1 8 8c0 3-1.5 5.5-4 7H8c-2.5-1.5-4-4-4-7a8 8 0 0 1 8-8z" opacity=".4"/></svg></div>
-          <h3 class="card-title">In Transit</h3>
-          <p>Your cargo is moving — on the vessel or in the air. GPS position and milestone updates appear here daily, with alerts on any schedule change.</p>
+        <div class="step reveal" style="--d:.08s">
+          <div class="step-num">02</div>
+          <h3>Supplier sourcing</h3>
+          <p>We find and verify 2–5 suitable factories, provide profiles and pricing.</p>
         </div>
-        <div class="glass card reveal" style="--d:.12s">
-          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
-          <h3 class="card-title">Customs</h3>
-          <p>Clearance at Djibouti Port, Modjo Dry Port or Bole Airport. Documents were pre-filed while in transit, so most shipments clear within 24 hours of arrival.</p>
+        <div class="step reveal" style="--d:.16s">
+          <div class="step-num">03</div>
+          <h3>Production &amp; QC</h3>
+          <p>Factory confirmed, samples approved, mass production with multi-stage quality control.</p>
         </div>
-        <div class="glass card reveal" style="--d:.18s">
-          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <h3 class="card-title">Delivered</h3>
-          <p>Final-mile trucking complete. A proof of delivery (POD) is available on request, and our team follows up within 48 hours to confirm everything arrived in order.</p>
+        <div class="step reveal" style="--d:.24s">
+          <div class="step-num">04</div>
+          <h3>Shipped &amp; delivered</h3>
+          <p>Sea or air freight, customs clearance, trucked to your door in destination.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= Timeframes ======= -->
-  <section class="section section-tight">
+  <!-- FAQ -->
+  <section class="section" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,.03),transparent)">
     <div class="container">
-      <div class="split">
-        <div>
-          <span class="eyebrow reveal">Typical timelines</span>
-          <h2 class="h2 reveal" style="--d:.05s">What to expect, <span class="grad-text">per mode</span></h2>
-          <p class="lead reveal" style="--d:.1s">Transit times are door-to-door from a Chinese supplier to an Ethiopian address. They include pickup, export, the ocean or air leg, customs and final delivery.</p>
-          <div class="faq-list" style="margin-top:28px;max-width:none">
-            <div class="faq-item reveal">
-              <button class="faq-q" aria-expanded="false">Sea freight (LCL / FCL)
-                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
-              </button>
-              <div class="faq-a"><p>38–44 days door-to-door. Breakdown: 5–7 days China side (pickup + export), ~30 days ocean to Djibouti, then 2–4 days customs + trucking from the dry port to your final city.</p></div>
-            </div>
-            <div class="faq-item reveal" style="--d:.04s">
-              <button class="faq-q" aria-expanded="false">Trucking from the dry port
-                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
-              </button>
-              <div class="faq-a"><p>1–3 days from Modjo Dry Port to major cities after customs clearance. Every truck is GPS-tracked with WhatsApp delivery confirmation at your door.</p></div>
-            </div>
-            <div class="faq-item reveal" style="--d:.08s">
-              <button class="faq-q" aria-expanded="false">Air freight
-                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
-              </button>
-              <div class="faq-a"><p>4–6 days door-to-door, including same-day pickup options in Guangzhou/Shenzhen, pre-cleared customs at Bole Airport and delivery to your door.</p></div>
-            </div>
-          </div>
+      <div class="section-head center">
+        <span class="eyebrow reveal">Tracking FAQ</span>
+        <h2 class="h2 reveal" style="--d:.05s">How tracking <span class="grad-text">works</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Where do I find my order ID?
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Your order ID (e.g. KJ-2026-0847) is sent to you via email and WhatsApp when your sourcing inquiry is confirmed. It starts with "KJ-" followed by the year and sequence number.</p></div>
         </div>
-        <div class="glass route-card reveal" style="--d:.1s">
-          <h3 style="font-family:var(--font-d);font-size:1.15rem;margin-bottom:18px">Live shipment summary</h3>
-          <div class="mini-stats" style="margin-bottom:16px">
-            <div class="mini-stat"><div class="num">KT-88421</div><div class="lbl">TRACKING NO.</div></div>
-            <div class="mini-stat"><div class="num">2,340</div><div class="lbl">KG · 128 CARTONS</div></div>
-          </div>
-          <div class="feature" style="margin-bottom:12px"><div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21c.6-5 2-10 5-14M16 21c-2.4-2.6-4-5.4-5-8M5 21h14"/><path d="M12 2a8 8 0 0 1 8 8c0 3-1.5 5.5-4 7H8c-2.5-1.5-4-4-4-7a8 8 0 0 1 8-8z" opacity=".4"/></svg></div><div><h4>Vessel</h4><p>MSC ALESSIA V.117E · Ningbo → Djibouti</p></div></div>
-          <div class="feature" style="margin-bottom:12px"><div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div><h4>Position</h4><p>Transit — Strait of Malacca · ETA Djibouti Aug 16</p></div></div>
-          <div class="feature"><div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Next milestone</h4><p>Arrival Djibouti Port · then dry-port clearance & trucking</p></div></div>
-          <p style="font-size:12px;color:var(--muted);margin-top:18px">Updated 3 minutes ago · next update scheduled automatically at every milestone.</p>
+        <div class="faq-item reveal" style="--d:.04s">
+          <button class="faq-q" aria-expanded="false">How often is tracking updated?
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Tracking is updated at every major milestone — supplier confirmed, sample approved, production started, QC passed, shipped, in transit, customs cleared, and delivered. You also receive WhatsApp alerts at each stage.</p></div>
+        </div>
+        <div class="faq-item reveal" style="--d:.08s">
+          <button class="faq-q" aria-expanded="false">Can I track a shipment separately?
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Yes. Once your order ships, you'll receive a separate shipment tracking number (for sea or air freight) with real-time GPS tracking. The order ID covers the full sourcing-to-delivery journey.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= Help CTA ======= -->
-  <section class="section section-tight">
-    <div class="container">
-      <div class="cta-band reveal">
-        <h2>Can't find your shipment?</h2>
-        <p>Tracking numbers are issued the day cargo is collected. If you haven't received yours, our operations team will locate your cargo in minutes.</p>
-        <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary btn-lg">Contact operations</a>
-          <a href="https://wa.me/251912345678" class="btn btn-ghost btn-lg">WhatsApp +251 91 234 5678</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Footer ======= -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="brand" aria-label="Keraj Trading — home">
-            <img src="assets/logo.png" alt="Keraj Trading — One Member PLC · Logistics & Shipping Solutions" class="brand-img brand-img-lg" />
-          </a>
-          <p>Keraj Trading moves freight between China and Ethiopia — sea and air, with customs clearance, dry-port trucking and door-to-door delivery handled end to end.</p>
+          <a href="index.html" class="brand" aria-label="Keraj Trading — home"><img src="assets/logo.png" alt="Keraj Trading" class="brand-img brand-img-lg" /></a>
+          <p>Keraj Trading connects destination businesses to reliable Chinese suppliers — sourcing, verification, quality control, private labeling and logistics.</p>
           <div class="footer-socials">
-            <a href="#" class="soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
-            <a href="#" class="soc" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8.25h2.77l.42-3.22H13.5V7.47c0-.93.26-1.57 1.6-1.57h1.7V3.03c-.3-.04-1.31-.13-2.49-.13-2.46 0-4.15 1.5-4.15 4.26v2.37H7.4v3.22h2.76V21h3.34z"/></svg></a>
-            <a href="#" class="soc" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 18.9 19c-.22 1-.82 1.25-1.66.78l-4.58-3.37-2.21 2.13c-.24.24-.45.45-.92.45l.33-4.66 8.5-7.68c.37-.33-.08-.51-.57-.18L7.4 12.6 2.9 11.3c-.97-.3-.99-.97.2-1.44L20.6 3.2c.8-.3 1.5.18 1.3 1.4z"/></svg></a>
-            <a href="#" class="soc" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" class="soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://wa.me/251911876159" class="soc" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="quote.html">Get a Quote</a></li>
-            <li><a href="tracking.html">Track Shipment</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html#sea">Sea Freight FCL / LCL</a></li>
-            <li><a href="services.html#air">Air Freight</a></li>
-            <li><a href="services.html#trucking">Dry-Port Trucking & Door-to-Door</a></li>
-            <li><a href="services.html#customs">Customs Clearance</a></li>
-            <li><a href="services.html#warehouse">Warehousing & Distribution</a></li>
-          </ul>
-        </div>
-        <div class="footer-col footer-contact">
-          <h4>Contact</h4>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bole Road, Addis Ababa, Ethiopia</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+251 11 662 0400</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+86 20 3888 1234</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>hello@kerajtrading.com</li>
-          </ul>
-          <div class="newsletter" style="margin-top:22px">
-            <p>Freight rates & route updates — once a month, no spam.</p>
-            <form class="news-form">
-              <input type="email" placeholder="Your email address" required aria-label="Email address" />
-              <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></button>
-            </form>
-          </div>
-        </div>
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#sourcing">Supplier Sourcing</a></li><li><a href="services.html#audits">Factory Audits</a></li><li><a href="services.html#qc">Quality Control</a></li><li><a href="services.html#private-label">Private Label</a></li><li><a href="services.html#logistics">Import-Export Logistics</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Guangzhou, China &amp; destination, destination</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+251 91 187 6159</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@kerajtrading.com</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year>2026</span> Keraj Trading One Member PLC</span>
-        <div class="langs">
-          <a href="#">English</a>
-          <a href="#">አማርኛ</a>
-          <a href="#">中文</a>
-          <a href="#">Français</a>
-        </div>
+        <span>&copy; 2026 Keraj Trading One Member PLC. All rights reserved.</span>
+        <div class="langs"><a href="#">English</a><a href="#">አማርኛ</a><a href="#">中文</a></div>
       </div>
     </div>
   </footer>
 
+  <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span id="toastMsg"></span></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
   <script src="js/main.js"></script>
+  <script>
+    const sampleOrders = {
+      'KJ-2026-0847': {
+        id: 'KJ-2026-0847', status: 'In Production', statusClass: '',
+        product: 'LED panel lights (500 units)', supplier: 'Shenzhen Bright Electronics',
+        steps: ['Inquiry','Sourcing','Approved','Production','QC','Shipping','Customs','Delivered'],
+        done: [1,1,1,1,0,0,0,0], active: 4,
+        timeline: [
+          { time: 'Aug 18', title: 'Production started', desc: 'Factory began mass production of 500 LED panels', done: true },
+          { time: 'Aug 15', title: 'Sample approved', desc: 'Client approved pre-production sample via video call', done: true },
+          { time: 'Aug 12', title: 'Factory confirmed', desc: 'Shenzhen Bright Electronics verified — capacity confirmed', done: true },
+          { time: 'Aug 10', title: '3 suppliers shortlisted', desc: 'Quotes and profiles sent to client', done: true },
+          { time: 'Aug 8', title: 'Inquiry received', desc: 'Sourcing request for LED panels received', done: true },
+        ]
+      },
+      'KJ-2026-0912': {
+        id: 'KJ-2026-0912', status: 'Shipped', statusClass: '',
+        product: 'Construction steel (2 containers)', supplier: 'Guangzhou Steel Trading Co.',
+        steps: ['Inquiry','Sourcing','Approved','Production','QC','Shipping','Customs','Delivered'],
+        done: [1,1,1,1,1,1,0,0], active: 7,
+        timeline: [
+          { time: 'Aug 17', title: 'Vessel departed Guangzhou', desc: 'MSC ALESSIA — ETA port Sep 12', done: true },
+          { time: 'Aug 16', title: 'Pre-shipment QC passed', desc: 'AQL inspection — 0 defects found', done: true },
+          { time: 'Aug 10', title: 'Production completed', desc: '2 × 20ft containers loaded', done: true },
+          { time: 'Aug 5', title: 'Factory confirmed', desc: 'Guangzhou Steel Trading Co. verified', done: true },
+          { time: 'Aug 1', title: 'Inquiry received', desc: 'Steel sourcing request for construction project', done: true },
+        ]
+      },
+      'KJ-2026-1005': {
+        id: 'KJ-2026-1005', status: 'Delivered', statusClass: '',
+        product: 'Textile fabric (800 meters)', supplier: 'Yiwu Textile Manufacturing',
+        steps: ['Inquiry','Sourcing','Approved','Production','QC','Shipping','Customs','Delivered'],
+        done: [1,1,1,1,1,1,1,1], active: -1,
+        timeline: [
+          { time: 'Aug 14', title: 'Delivered to destination', desc: 'Client confirmed receipt — all intact', done: true },
+          { time: 'Aug 12', title: 'Customs cleared at port', desc: 'Duties paid, goods released', done: true },
+          { time: 'Aug 5', title: 'Arrived port port', desc: 'Discharged from vessel', done: true },
+          { time: 'Jul 25', title: 'Vessel departed Yiwu', desc: 'Sea freight via Shanghai', done: true },
+          { time: 'Jul 15', title: 'Production completed', desc: '800m fabric, QC passed', done: true },
+          { time: 'Jul 10', title: 'Inquiry received', desc: 'Textile sourcing for garment factory', done: true },
+        ]
+      }
+    };
+
+    function trackOrder() {
+      const id = document.getElementById('trackInput').value.trim().toUpperCase();
+      if (!id) { showToast('Please enter an order ID'); return; }
+      const order = sampleOrders[id];
+      if (!order) { showToast('Order not found. Try KJ-2026-0847'); return; }
+      renderTracking(order);
+    }
+
+    function loadSample(id) {
+      document.getElementById('trackInput').value = id;
+      renderTracking(sampleOrders[id]);
+    }
+
+    function renderTracking(order) {
+      document.getElementById('trackId').textContent = order.id;
+      document.getElementById('trackStatus').textContent = order.status;
+      const stepsEl = document.getElementById('trackSteps');
+      stepsEl.innerHTML = order.steps.map((s,i) => {
+        let cls = order.done[i] ? 'done' : '';
+        if (i === order.active - 1) cls = 'active';
+        return '<div class="tstep ' + cls + '"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div class="tl">' + s + '</div></div>';
+      }).join('');
+      const tlEl = document.getElementById('trackTimeline');
+      tlEl.innerHTML = order.timeline.map(e => {
+        return '<div class="tl-row ' + (e.done ? 'done' : '') + '"><div class="tl-time">' + e.time + '</div><div class="tl-event"><div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><p><b>' + e.title + '</b>' + e.desc + '</p></div></div>';
+      }).join('');
+      document.getElementById('trackingResult').classList.add('show');
+    }
+  </script>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-cta" id="stickyCta">
+    <span class="sticky-cta-fire">🔥</span>
+    <span class="sticky-cta-text">Free sourcing consultation — <b>only 3 spots left this week</b></span>
+    <span class="sticky-cta-timer"><span class="timer-num" id="ctaTimer">23:59:42</span></span>
+    <a href="quote.html" class="btn btn-primary btn-sm">Claim Free Quote →</a>
+  </div>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/251911876159?text=Hi%20Keraj%20Trading%2C%20I%20need%20help%20with%20sourcing" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp"><div class="wa-float-pulse"></div><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
 </body>
 </html>

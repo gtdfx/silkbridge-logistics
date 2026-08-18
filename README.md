@@ -1,58 +1,65 @@
-# Keraj Trading One Member PLC — China ⇄ Ethiopia
+# Keraj Trading — China Sourcing & Import-Export Agent
 
-A modern, futuristic marketing website for a freight & logistics company that ships cargo from China to Ethiopia (sea and air), with customs clearance, dry-port trucking and door-to-door delivery.
+> Supplier sourcing · Factory audits · Quality control · Private labeling · Import-export logistics
 
-> ⚠️ **Sample data** — all company details, rates, contacts, team members and testimonials are illustrative placeholders. Swap in the real company information before going live.
+## What this site is
+
+A modern, dark-themed website for **Keraj Trading One Member PLC** — a China sourcing and import-export agent connecting Ethiopian businesses to verified Chinese suppliers. Built as a static multi-page site with glassmorphism UI, aurora gradients, and smooth reveal animations.
+
+**Live:** [silkbridge-logistics.vercel.app](https://silkbridge-logistics.vercel.app)
 
 ## Pages
 
-| Page | Path | Highlights |
-| --- | --- | --- |
-| Home | `index.html` | Animated route visual (Shanghai → Djibouti → Addis Ababa), stats, services, routes & rates table, testimonials, FAQ |
-| Services | `services.html` | Sea FCL/LCL, Air, Dry-Port Trucking, Customs, Warehousing — with pricing cards, value-added services, industries |
-| Get a Quote | `quote.html` | Interactive door-to-door cost calculator (live USD + ETB estimates) |
-| Track Shipment | `tracking.html` | Demo tracker with milestone timeline (try `KT-88421-CN-ET`) |
-| About | `about.html` | Story, values, milestone timeline, team, offices |
-| Contact | `contact.html` | Contact form, office cards, WhatsApp, FAQ |
+| Page | Purpose |
+|------|---------|
+| `index.html` | Homepage — hero, services overview, product categories, process, why-us, testimonials, FAQ |
+| `services.html` | 7 service sections — Supplier Sourcing, Factory Audits, QC, Private Label, Trading, Logistics, Consulting |
+| `quote.html` | Sourcing inquiry form — product, category, volume, MOQ, branding needs |
+| `tracking.html` | Order tracking — from sourcing request to delivery |
+| `about.html` | Company story, milestones, team, offices |
+| `contact.html` | Contact form, office locations, WhatsApp |
 
-## Tech
+## Services covered
 
-- Pure HTML + CSS + JS — **no build step, no frameworks, no dependencies**
-- Dark futuristic design system: glassmorphism, aurora gradients, animated SVG route, scroll reveals, count-up stats, cursor glow
-- Fully responsive, with `prefers-reduced-motion` support
+1. **Supplier Sourcing & Verification** — Find and vet Chinese suppliers
+2. **Supplier Tours & Factory Audits** — On-site factory visits and audit reports
+3. **Quality Control & Inspection** — Three-stage QC (sample, production, pre-shipment)
+4. **Private Label & Custom Branding** — OEM/ODM from prototype to delivery
+5. **General Trading & Wholesale** — Direct product sourcing across categories
+6. **Import-Export Logistics** — Sea/air freight, customs, trucking, door-to-door
+7. **Business Consulting** — Market entry and supply chain optimization
 
-## Project structure
+## Product categories
 
-```
-├── index.html          # Home
-├── services.html       # Services & rates
-├── quote.html          # Quote calculator
-├── tracking.html       # Shipment tracking (demo)
-├── about.html          # About
-├── contact.html        # Contact
-├── css/style.css       # Design system / styles
-└── js/main.js          # Shared interactions + calculator + tracking demo
-```
+Electronics & Technology · Construction Materials · Industrial Machinery · Medical & Healthcare · Textiles & Apparel · Auto Parts & Vehicles · Home & Garden · Consumer Goods
 
-## Run locally
+## Tech stack
 
-Any static server works — the site has no build step:
+- Semantic HTML5, vanilla CSS (custom properties, glassmorphism, aurora gradients)
+- Vanilla JavaScript (no frameworks)
+- Google Fonts: Sora + Manrope
+- Lucide-style inline SVG icons
+- Responsive design with mobile-first breakpoints
+- Static deployment on Vercel
+
+## Branding
+
+- **Company:** Keraj Trading One Member PLC
+- **Colors:** Ruby red `#e11d48` + Metallic gold `#D4AF37` on dark `#04060d`
+- **Logo:** Custom KERAJ emblem with globe, ship, plane, truck
+- **Locations:** Guangzhou, China (sourcing) · Addis Ababa, Ethiopia (HQ) · Modjo Dry Port (logistics)
+
+## Running locally
 
 ```bash
-# Python
-python -m http.server 8000
-
-# or Node
+# Any static server works:
 npx serve .
+# or
+python -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+## Deployment
 
-## Deploy on Vercel
-
-1. Push this repo to GitHub.
-2. In Vercel: **Add New → Project → Import** the repository.
-3. Vercel auto-detects a static site — keep the default settings and click **Deploy**.
-4. Framework preset: *Other* · Build command: *(none)* · Output directory: *(default, root)*
-
-`vercel.json` (clean URLs) is included; no other configuration needed.
+```bash
+vercel --prod
+```

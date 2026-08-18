@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us — Keraj Trading | China to Ethiopia</title>
-  <meta name="description" content="Contact Keraj Trading for China to Ethiopia freight. Addis Ababa HQ, Guangzhou operations, WhatsApp support and a quote within 20 minutes." />
+  <title>Contact Us — Keraj Trading | China Sourcing Agent</title>
+  <meta name="description" content="Contact Keraj Trading for China sourcing — supplier sourcing, factory audits, QC, private labeling and worldwide logistics. Offices in Guangzhou." />
   <link rel="icon" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,12 +26,12 @@
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="quote.html">Get a Quote</a>
-        <a href="tracking.html">Track Shipment</a>
+        <a href="tracking.html">Track Order</a>
         <a href="about.html">About Us</a>
         <a href="contact.html" class="active">Contact</a>
       </nav>
       <div class="nav-actions">
-        <a href="quote.html" class="btn btn-primary btn-sm">Get a Quote</a>
+        <a href="quote.html" class="btn btn-primary btn-sm">Start Sourcing</a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
         </button>
@@ -39,7 +39,6 @@
     </div>
   </header>
 
-  <!-- ======= Page hero ======= -->
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumbs reveal">
@@ -47,75 +46,88 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
         <span class="cur">Contact</span>
       </div>
-      <span class="eyebrow reveal">We reply fast</span>
-      <h1 class="reveal" style="--d:.05s">Talk to a human who <span class="grad-text">actually moves cargo</span></h1>
-      <p class="lead reveal" style="--d:.1s">Quotes in 20 minutes, answers in hours. Reach us however you like — WhatsApp, email, phone, or the form below.</p>
+      <span class="eyebrow reveal">Get in touch</span>
+      <h1 class="reveal" style="--d:.05s">Let's find the right <span class="grad-text">supplier for you</span></h1>
+      <p class="lead reveal" style="--d:.1s">Reach us via WhatsApp, email, phone, or the form below. Quotes in 24 hours, answers in hours.</p>
     </div>
   </section>
 
-  <!-- ======= Contact ======= -->
   <section class="section section-tight" style="padding-top:0">
     <div class="container">
       <div class="contact-grid">
-        <!-- Form -->
         <div class="glass form-panel reveal">
-          <h3 style="font-family:var(--font-d);font-size:1.25rem;margin-bottom:6px">Send us a message</h3>
-          <p style="color:var(--muted);font-size:14px;margin-bottom:26px">Tell us about your cargo — weight, dimensions, goods type and target delivery date if you know them.</p>
-          <form id="contactForm">
+          <h2 style="font-size:1.3rem;margin-bottom:24px">Send us a sourcing inquiry</h2>
+          <form id="contactForm" onsubmit="return handleContactSubmit(event)">
             <div class="form-grid">
-              <div class="form-group"><label for="fName">Full name</label><input type="text" id="fName" class="input" placeholder="e.g. Abebe Bekele" /></div>
-              <div class="form-group"><label for="fEmail">Email address</label><input type="email" id="fEmail" class="input" placeholder="you@company.com" /></div>
-              <div class="form-group"><label for="fPhone">Phone / WhatsApp</label><input type="tel" id="fPhone" class="input" placeholder="+251 ..." /></div>
-              <div class="form-group"><label for="fTopic">I'm interested in</label>
-                <select id="fTopic" class="input">
-                  <option>Sea freight (FCL / LCL)</option>
-                  <option>Air freight</option>
-                  <option>Trucking & door-to-door delivery</option>
-                  <option>Customs clearance</option>
-                  <option>Warehousing & distribution</option>
-                  <option>Something else</option>
+              <div class="form-group">
+                <label>Your name *</label>
+                <input type="text" class="input" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" class="input" placeholder="Company name" />
+              </div>
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" class="input" placeholder="you@company.com" required />
+              </div>
+              <div class="form-group">
+                <label>WhatsApp / Phone</label>
+                <input type="text" class="input" placeholder="+251 ..." />
+              </div>
+              <div class="form-group full">
+                <label>What do you need? *</label>
+                <select class="input" required>
+                  <option value="">Select a service...</option>
+                  <option>Supplier Sourcing — find me a verified factory</option>
+                  <option>Factory Audit — inspect a specific supplier</option>
+                  <option>Quality Control — inspect my order</option>
+                  <option>Private Label — OEM/ODM products with my brand</option>
+                  <option>General Trading — wholesale product sourcing</option>
+                  <option>Full Sourcing + Logistics — end-to-end</option>
+                  <option>Just a question</option>
                 </select>
               </div>
-              <div class="form-group full"><label for="fMsg">Message</label><textarea id="fMsg" class="input" placeholder="e.g. 2 pallets of packaging machinery, ~800 kg, from Shenzhen to Addis Ababa, needed by end of month…"></textarea></div>
               <div class="form-group full">
-                <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Send message
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+                <label>Tell us about your needs</label>
+                <textarea class="input" rows="5" placeholder="Product type, quantity, specifications, budget, timeline — the more detail, the better we can help." style="resize:vertical;min-height:100px"></textarea>
+              </div>
+              <div class="form-group full">
+                <button type="submit" class="btn btn-primary btn-lg" style="width:100%">
+                  Send inquiry
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </button>
               </div>
             </div>
           </form>
-          <p style="font-size:12px;color:var(--muted);margin-top:16px">This is a sample website — messages are not actually sent. Use the WhatsApp or phone channels to reach the demo team.</p>
         </div>
 
-        <!-- Contact info -->
-        <div class="contact-cards">
-          <div class="glass contact-mini reveal">
-            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><h4>Addis Ababa HQ</h4><p>Bole Road, opposite Friendship Park<br/>Addis Ababa, Ethiopia</p><a href="#">Get directions →</a></div>
+        <div>
+          <div class="contact-cards">
+            <div class="glass contact-mini reveal">
+              <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div><h4>Call us</h4><p>+251 91 187 6159 (Ethiopia)</p><p>+86 156 2613 1075 (China)</p></div>
+            </div>
+            <div class="glass contact-mini reveal" style="--d:.06s">
+              <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><h4>Email us</h4><a href="mailto:hello@kerajtrading.com">hello@kerajtrading.com</a></div>
+            </div>
+            <div class="glass contact-mini reveal" style="--d:.12s">
+              <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><h4>Offices</h4><p><b>Guangzhou, China</b> — Sourcing &amp; QC</p><p><b>Addis Ababa, Ethiopia</b> — Regional HQ</p><p><b>Worldwide</b> — Delivery</div>
+            </div>
           </div>
-          <div class="glass contact-mini reveal" style="--d:.06s">
-            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div><h4>Call us</h4><p>Ethiopia: <a href="tel:+251116620400">+251 11 662 0400</a><br/>China: <a href="tel:+862038881234">+86 20 3888 1234</a><br/>Djibouti: <a href="tel:+25321350000">+253 21 35 0000</a></p></div>
-          </div>
-          <div class="glass contact-mini reveal" style="--d:.12s">
-            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
-            <div><h4>Email</h4><p>Quotes: <a href="mailto:quotes@kerajtrading.com">quotes@kerajtrading.com</a><br/>Tracking: <a href="mailto:tracking@kerajtrading.com">tracking@kerajtrading.com</a><br/>General: <a href="mailto:hello@kerajtrading.com">hello@kerajtrading.com</a></p></div>
-          </div>
-          <div class="glass contact-mini reveal" style="--d:.18s">
-            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-            <div><h4>Working hours</h4><p>Addis (EAT): Mon–Sat 8:30–18:30<br/>Guangzhou (CST): Mon–Sat 9:00–18:00<br/>Operations: 24/7 for transit cargo</p></div>
-          </div>
-          <div class="whatsapp-card reveal" style="--d:.24s">
-            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-            <div><b>WhatsApp — fastest response</b><p>+251 91 234 5678 · replies in minutes during working hours, within 2 hours at night.</p></div>
+          <div class="whatsapp-card glass reveal" style="--d:.18s;margin-top:18px">
+            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></div>
+            <div><b>WhatsApp us — fastest response</b><p>Send your sourcing needs directly. We reply within hours.</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= FAQ ======= -->
-  <section class="section" style="background:linear-gradient(180deg,transparent,rgba(13,19,36,.35),transparent)">
+  <!-- FAQ -->
+  <section class="section" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,.03),transparent)">
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow reveal">Before you ask</span>
@@ -123,112 +135,69 @@
       </div>
       <div class="faq-list">
         <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">Do you charge for quotes?
+          <button class="faq-q" aria-expanded="false">How fast do you respond?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </button>
-          <div class="faq-a"><p>Never. Quotes are free, binding for 7 days, and include every fee you'll pay — freight, customs, insurance, inland delivery. If a cost appears later that wasn't in your quote, we cover it.</p></div>
+          <div class="faq-a"><p>Within 24 hours for all inquiries. WhatsApp messages typically get a response within a few hours during business hours (Guangzhou time zone, GMT+8).</p></div>
         </div>
         <div class="faq-item reveal" style="--d:.04s">
-          <button class="faq-q" aria-expanded="false">What documents do I need to ship?
+          <button class="faq-q" aria-expanded="false">Is the initial consultation free?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </button>
-          <div class="faq-a"><p>Just your commercial invoice and packing list. We prepare the bill of lading / air waybill, certificate of origin, export declarations and customs documents. Our team verifies everything before pickup.</p></div>
+          <div class="faq-a"><p>Yes. Supplier matching, initial pricing and consultation are completely free. You only pay when you proceed with an order.</p></div>
         </div>
         <div class="faq-item reveal" style="--d:.08s">
-          <button class="faq-q" aria-expanded="false">Can you ship dangerous goods?
+          <button class="faq-q" aria-expanded="false">What languages do you support?
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </button>
-          <div class="faq-a"><p>Yes, with proper DG certification — we're trained in IATA/IMDG handling. Lithium batteries, chemicals and some industrial goods ship regularly with us. Tell us what you have and we'll confirm feasibility.</p></div>
-        </div>
-        <div class="faq-item reveal" style="--d:.12s">
-          <button class="faq-q" aria-expanded="false">How do claims work if cargo is damaged?
-            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a"><p>Photograph the damage on delivery, tell your account manager within 72 hours, and we handle the claim with our insurer end to end — including local settlement in Addis. Most claims resolve within 15 working days.</p></div>
+          <div class="faq-a"><p>English, Amharic (አማርኛ) and Mandarin Chinese. Our team handles all communication with Chinese factories on your behalf.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= CTA ======= -->
-  <section class="section section-tight">
-    <div class="container">
-      <div class="cta-band reveal">
-        <h2>Prefer to skip the form?</h2>
-        <p>Get an instant estimate right now — it takes 20 seconds and no email required.</p>
-        <div class="cta-actions">
-          <a href="quote.html" class="btn btn-primary btn-lg">Use the quote calculator</a>
-          <a href="https://wa.me/251912345678" class="btn btn-ghost btn-lg">WhatsApp +251 91 234 5678</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Footer ======= -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="brand" aria-label="Keraj Trading — home">
-            <img src="assets/logo.png" alt="Keraj Trading — One Member PLC · Logistics & Shipping Solutions" class="brand-img brand-img-lg" />
-          </a>
-          <p>Keraj Trading moves freight between China and Ethiopia — sea and air, with customs clearance, dry-port trucking and door-to-door delivery handled end to end.</p>
+          <a href="index.html" class="brand" aria-label="Keraj Trading — home"><img src="assets/logo.png" alt="Keraj Trading" class="brand-img brand-img-lg" /></a>
+          <p>Keraj Trading is a China-based sourcing & import-export agent — supplier sourcing, factory audits, quality control, private labeling, and worldwide logistics from Guangzhou.</p>
           <div class="footer-socials">
-            <a href="#" class="soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
-            <a href="#" class="soc" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8.25h2.77l.42-3.22H13.5V7.47c0-.93.26-1.57 1.6-1.57h1.7V3.03c-.3-.04-1.31-.13-2.49-.13-2.46 0-4.15 1.5-4.15 4.26v2.37H7.4v3.22h2.76V21h3.34z"/></svg></a>
-            <a href="#" class="soc" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 18.9 19c-.22 1-.82 1.25-1.66.78l-4.58-3.37-2.21 2.13c-.24.24-.45.45-.92.45l.33-4.66 8.5-7.68c.37-.33-.08-.51-.57-.18L7.4 12.6 2.9 11.3c-.97-.3-.99-.97.2-1.44L20.6 3.2c.8-.3 1.5.18 1.3 1.4z"/></svg></a>
-            <a href="#" class="soc" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" class="soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://wa.me/251911876159" class="soc" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="quote.html">Get a Quote</a></li>
-            <li><a href="tracking.html">Track Shipment</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html#sea">Sea Freight FCL / LCL</a></li>
-            <li><a href="services.html#air">Air Freight</a></li>
-            <li><a href="services.html#trucking">Dry-Port Trucking & Door-to-Door</a></li>
-            <li><a href="services.html#customs">Customs Clearance</a></li>
-            <li><a href="services.html#warehouse">Warehousing & Distribution</a></li>
-          </ul>
-        </div>
-        <div class="footer-col footer-contact">
-          <h4>Contact</h4>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bole Road, Addis Ababa, Ethiopia</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+251 11 662 0400</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+86 20 3888 1234</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>hello@kerajtrading.com</li>
-          </ul>
-          <div class="newsletter" style="margin-top:22px">
-            <p>Freight rates & route updates — once a month, no spam.</p>
-            <form class="news-form">
-              <input type="email" placeholder="Your email address" required aria-label="Email address" />
-              <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></button>
-            </form>
-          </div>
-        </div>
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#sourcing">Supplier Sourcing</a></li><li><a href="services.html#audits">Factory Audits</a></li><li><a href="services.html#qc">Quality Control</a></li><li><a href="services.html#private-label">Private Label</a></li><li><a href="services.html#logistics">Import-Export Logistics</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Guangzhou, China &amp; worldwide</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+251 91 187 6159</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@kerajtrading.com</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <span>© <span data-year>2026</span> Keraj Trading One Member PLC</span>
-        <div class="langs">
-          <a href="#">English</a>
-          <a href="#">አማርኛ</a>
-          <a href="#">中文</a>
-          <a href="#">Français</a>
-        </div>
+        <span>&copy; 2026 Keraj Trading One Member PLC. All rights reserved.</span>
+        <div class="langs"><a href="#">English</a><a href="#">አማርኛ</a><a href="#">中文</a></div>
       </div>
     </div>
   </footer>
 
+  <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span id="toastMsg"></span></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
   <script src="js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      showToast('Inquiry sent! We\'ll respond within 24 hours.');
+      e.target.reset();
+      return false;
+    }
+  </script>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-cta" id="stickyCta">
+    <span class="sticky-cta-fire">🔥</span>
+    <span class="sticky-cta-text">Free sourcing consultation — <b>only 3 spots left this week</b></span>
+    <span class="sticky-cta-timer"><span class="timer-num" id="ctaTimer">23:59:42</span></span>
+    <a href="quote.html" class="btn btn-primary btn-sm">Claim Free Quote →</a>
+  </div>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/251911876159?text=Hi%20Keraj%20Trading%2C%20I%20need%20help%20with%20sourcing" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp"><div class="wa-float-pulse"></div><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
 </body>
 </html>
