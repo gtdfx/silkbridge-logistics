@@ -382,6 +382,38 @@ h1, h2, h3, h4 {
 
 .nav-actions { display: flex; align-items: center; gap: 14px; }
 
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 999px;
+  padding: 3px;
+}
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #666;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  font-family: var(--font-d);
+  line-height: 1;
+}
+.lang-btn:hover { color: #1a1a2e; }
+.lang-btn.active {
+  background: var(--ruby);
+  color: #fff;
+}
+.site-header.on-hero .lang-btn { color: rgba(255,255,255,0.6); }
+.site-header.on-hero .lang-btn:hover { color: #fff; }
+.site-header.on-hero .lang-btn.active { background: var(--ruby); color: #fff; }
+.site-header.on-hero .lang-switcher { background: rgba(255,255,255,0.1); }
+
 .nav-toggle {
   display: none;
   width: 42px;
@@ -1734,6 +1766,7 @@ input[type="range"]::-webkit-slider-thumb {
   .site-header.on-hero .main-nav a.active { color: var(--gold); background: none; font-weight: 700; }
   .nav-toggle { display: grid; }
   .nav-actions .btn { display: none; }
+  .nav-actions .lang-switcher { display: none; }
   .mobile-nav-close {
     position: absolute;
     top: 20px;

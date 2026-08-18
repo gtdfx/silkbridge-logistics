@@ -46,17 +46,27 @@
         <button class="mobile-nav-close" id="navClose" aria-label="Close menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
-        <a href="index.html" class="active">Home</a>
-        <a href="services.html">Services</a>
-        <a href="tracking.html">Track Order</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+        <a href="services.html" data-i18n="nav.services">Services</a>
+        <a href="tracking.html" data-i18n="nav.track">Track Order</a>
+        <a href="about.html" data-i18n="nav.about">About Us</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
         <div class="mobile-nav-cta">
-          <a href="tracking.html" class="btn btn-secondary">Track Order</a>
+          <div class="lang-switcher" style="justify-content:center;margin-bottom:16px">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="am">አማ</button>
+          </div>
+          <a href="tracking.html" class="btn btn-secondary" data-i18n="nav.track">Track Order</a>
         </div>
       </nav>
       <div class="nav-actions">
-        <a href="quote.html" class="btn btn-primary btn-sm">Start Sourcing</a>
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">中文</button>
+          <button class="lang-btn" data-lang="am">አማ</button>
+        </div>
+        <a href="quote.html" class="btn btn-primary btn-sm" data-i18n="nav.start">Start Sourcing</a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
         </button>
@@ -70,12 +80,12 @@
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,0.6) 0%,rgba(5,5,5,0.2) 30%,rgba(5,5,5,0.2) 70%,rgba(5,5,5,0.6) 100%)"></div>
     <div class="container" style="position:relative;z-index:2">
       <div style="max-width:700px;margin:0 auto;text-align:center">
-        <span class="eyebrow reveal" style="color:#dba03d">China → Worldwide · Sourcing · Logistics · Quality</span>
-        <h1 class="reveal" style="--d:.05s;color:#fff;font-size:clamp(2.6rem,5.5vw,4rem);margin-bottom:24px;line-height:1.1">Your trusted <span style="background:linear-gradient(100deg,#ff6b6b,#ffde00);-webkit-background-clip:text;background-clip:text;color:transparent">China</span> sourcing agent — delivering <span style="background:linear-gradient(100deg,#dba03d,#fff);-webkit-background-clip:text;background-clip:text;color:transparent">worldwide</span>.</h1>
-        <p class="lead reveal" style="--d:.1s;color:rgba(255,255,255,0.85);font-size:clamp(1rem,1.4vw,1.15rem);margin-bottom:36px;max-width:600px">We source, verify, inspect and deliver — from Chinese factories to your door, anywhere in the world.</p>
+        <span class="eyebrow reveal" style="color:#dba03d" data-i18n="hero.eyebrow">China → Worldwide · Sourcing · Logistics · Quality</span>
+        <h1 class="reveal" style="--d:.05s;color:#fff;font-size:clamp(2.6rem,5.5vw,4rem);margin-bottom:24px;line-height:1.1"><span data-i18n="hero.title.pre">Your trusted</span> <span style="background:linear-gradient(100deg,#ff6b6b,#ffde00);-webkit-background-clip:text;background-clip:text;color:transparent" data-i18n="hero.title.highlight">China</span> <span data-i18n="hero.title.mid">sourcing agent — delivering</span> <span style="background:linear-gradient(100deg,#dba03d,#fff);-webkit-background-clip:text;background-clip:text;color:transparent" data-i18n="hero.title.end">worldwide</span>.</h1>
+        <p class="lead reveal" style="--d:.1s;color:rgba(255,255,255,0.85);font-size:clamp(1rem,1.4vw,1.15rem);margin-bottom:36px;max-width:600px" data-i18n="hero.lead">We source, verify, inspect and deliver — from Chinese factories to your door, anywhere in the world.</p>
         <div class="hero-ctas reveal" style="--d:.15s;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-          <a href="quote.html" class="btn btn-primary btn-lg">Start sourcing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="services.html" class="btn btn-lg" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:#fff;backdrop-filter:blur(8px)">Explore services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
+          <a href="quote.html" class="btn btn-primary btn-lg"><span data-i18n="hero.cta1">Start sourcing</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="services.html" class="btn btn-lg" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:#fff;backdrop-filter:blur(8px)"><span data-i18n="hero.cta2">Explore services</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
         </div>
       </div>
     </div>
@@ -108,10 +118,10 @@
   <section class="section section-tight">
     <div class="container">
       <div class="stats-grid">
-        <div class="glass stat-card reveal"><div class="stat-num"><span data-count="500">0</span><sup>+</sup></div><div class="stat-lbl">Verified Chinese suppliers in our network</div></div>
-        <div class="glass stat-card reveal" style="--d:.08s"><div class="stat-num"><span data-count="12">0</span><sup>+</sup></div><div class="stat-lbl">Years sourcing from China</div></div>
-        <div class="glass stat-card reveal" style="--d:.16s"><div class="stat-num"><span data-count="4800">0</span><sup>+</sup></div><div class="stat-lbl">Orders sourced & delivered</div></div>
-        <div class="glass stat-card reveal" style="--d:.24s"><div class="stat-num"><span data-count="98">0</span><sup>%</sup></div><div class="stat-lbl">Client satisfaction rate</div></div>
+        <div class="glass stat-card reveal"><div class="stat-num"><span data-count="500">0</span><sup>+</sup></div><div class="stat-lbl" data-i18n="stats.suppliers">Verified Chinese suppliers in our network</div></div>
+        <div class="glass stat-card reveal" style="--d:.08s"><div class="stat-num"><span data-count="12">0</span><sup>+</sup></div><div class="stat-lbl" data-i18n="stats.years">Years sourcing from China</div></div>
+        <div class="glass stat-card reveal" style="--d:.16s"><div class="stat-num"><span data-count="4800">0</span><sup>+</sup></div><div class="stat-lbl" data-i18n="stats.orders">Orders sourced & delivered</div></div>
+        <div class="glass stat-card reveal" style="--d:.24s"><div class="stat-num"><span data-count="98">0</span><sup>%</sup></div><div class="stat-lbl" data-i18n="stats.satisfaction">Client satisfaction rate</div></div>
       </div>
     </div>
   </section>
@@ -120,29 +130,29 @@
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow reveal">What we do</span>
-        <h2 class="h2 reveal" style="--d:.05s">End-to-end sourcing &amp; logistics. <span class="grad-text">One accountable team.</span></h2>
-        <p class="lead reveal" style="--d:.1s">Whatever you're sourcing — electronics, machinery, construction materials or consumer goods — we handle everything from finding the right factory in China to delivering to your door, anywhere in the world.</p>
+        <span class="eyebrow reveal" data-i18n="services.eyebrow">What we do</span>
+        <h2 class="h2 reveal" style="--d:.05s"><span data-i18n="services.title">End-to-end sourcing &amp; logistics.</span> <span class="grad-text" data-i18n="services.title.grad">One accountable team.</span></h2>
+        <p class="lead reveal" style="--d:.1s" data-i18n="services.lead">Whatever you're sourcing — electronics, machinery, construction materials or consumer goods — we handle everything from finding the right factory in China to delivering to your door, anywhere in the world.</p>
       </div>
             <div class="services-grid" >
         <div class="card service-card reveal">
           <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=300&fit=crop&auto=format" alt="Factory sourcing in China" class="card-img" loading="lazy" />
-          <h3 class="card-title">Supplier Sourcing & Verification</h3>
-          <p>We find, vet and verify Chinese suppliers — checking licenses, production capacity, export history and references before you commit. On-site factory visits in Guangzhou.</p>
+          <h3 class="card-title" data-i18n="services.sourcing.title">Supplier Sourcing & Verification</h3>
+          <p data-i18n="services.sourcing.desc">We find, vet and verify Chinese suppliers — checking licenses, production capacity, export history and references before you commit. On-site factory visits in Guangzhou.</p>
           <div class="service-meta"><span>500+ suppliers</span><span>100% verified</span><span>48h turnaround</span></div>
           <a href="services.html#sourcing" class="card-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="card service-card reveal" style="--d:.06s">
           <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=300&fit=crop&auto=format" alt="Quality control inspection" class="card-img" loading="lazy" />
-          <h3 class="card-title">Quality Control & Private Label</h3>
-          <p>Multi-stage QC — samples, during production and pre-shipment inspections. Plus end-to-end OEM/private label from prototype to delivered order.</p>
+          <h3 class="card-title" data-i18n="services.qc.title">Quality Control & Private Label</h3>
+          <p data-i18n="services.qc.desc">Multi-stage QC — samples, during production and pre-shipment inspections. Plus end-to-end OEM/private label from prototype to delivered order.</p>
           <div class="service-meta"><span>3-stage QC</span><span>OEM/ODM</span><span>Custom branding</span></div>
           <a href="services.html#qc" class="card-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="card service-card reveal" style="--d:.12s">
           <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=300&fit=crop&auto=format" alt="Shipping and logistics" class="card-img" loading="lazy" />
-          <h3 class="card-title">Import-Export Logistics</h3>
-          <p>Sea and air freight, customs clearance and door-to-door delivery — the complete logistics chain handled end to end from China to anywhere in the world.</p>
+          <h3 class="card-title" data-i18n="services.logistics.title">Import-Export Logistics</h3>
+          <p data-i18n="services.logistics.desc">Sea and air freight, customs clearance and door-to-door delivery — the complete logistics chain handled end to end from China to anywhere in the world.</p>
           <div class="service-meta"><span>Sea &amp; air</span><span>Door-to-door</span><span>Customs included</span></div>
           <a href="services.html#logistics" class="card-link">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
@@ -439,6 +449,7 @@
   <!-- Cursor glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Sticky CTA Bar -->
