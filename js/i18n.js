@@ -121,8 +121,8 @@ function setLanguage(lang) {
   });
 
   /* Update lang switcher active state */
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.lang === lang);
+  document.querySelectorAll(".lang-btn, .lang-link").forEach((el) => {
+    el.classList.toggle("active", el.dataset.lang === lang);
   });
 }
 
@@ -131,10 +131,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("keraj-lang") || "en";
   setLanguage(saved);
 
-  /* Click handlers for language buttons */
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      setLanguage(btn.dataset.lang);
+  /* Click handlers for language buttons and footer links */
+  document.querySelectorAll(".lang-btn, .lang-link").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      setLanguage(el.dataset.lang);
     });
   });
 });

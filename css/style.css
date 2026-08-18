@@ -413,6 +413,7 @@ h1, h2, h3, h4 {
 .site-header.on-hero .lang-btn:hover { color: #fff; }
 .site-header.on-hero .lang-btn.active { background: var(--ruby); color: #fff; }
 .site-header.on-hero .lang-switcher { background: rgba(255,255,255,0.1); }
+.lang-link.active { color: var(--gold); font-weight: 700; }
 
 .nav-toggle {
   display: none;
