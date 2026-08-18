@@ -314,7 +314,6 @@ h1, h2, h3, h4 {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom-color: var(--line);
 }
 
 /* White nav when header is over the dark hero */
@@ -1418,6 +1417,43 @@ input[type="range"]::-webkit-slider-thumb {
   letter-spacing: 1px;
 }
 
+.quote-float {
+  position: fixed;
+  bottom: 150px;
+  right: 24px;
+  z-index: 95;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--ruby);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(159, 56, 33, 0.4);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+}
+.quote-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(159, 56, 33, 0.55);
+}
+.quote-float svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.quote-float-label {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-top: 2px;
+  color: #fff;
+}
 .wa-float {
   position: fixed;
   bottom: 80px;
@@ -1468,6 +1504,14 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .sticky-cta-text { font-size: 11px; }
   .sticky-cta-timer .timer-num { font-size: 13px; }
+  .quote-float {
+    width: 50px;
+    height: 50px;
+    bottom: 140px;
+    right: 16px;
+  }
+  .quote-float svg { width: 20px; height: 20px; }
+  .quote-float-label { font-size: 7px; }
   .wa-float {
     width: 50px;
     height: 50px;
@@ -1826,6 +1870,7 @@ input[type="range"]::-webkit-slider-thumb {
   .sticky-cta-text { font-size: 10px; }
   .sticky-cta-timer { display: none; }
   .sticky-cta-fire { font-size: 14px; }
+  .quote-float { bottom: 130px; right: 12px; width: 48px; height: 48px; }
   .wa-float { bottom: 70px; right: 12px; width: 48px; height: 48px; }
 }
 
