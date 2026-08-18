@@ -56,17 +56,28 @@
   /* ---------- Mobile nav ---------- */
   const toggle = document.getElementById("navToggle");
   const nav = document.getElementById("mainNav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", nav.classList.contains("open"));
-    });
-    nav.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        nav.classList.remove("open");
-      })
-    );
+  const backdrop = document.getElementById("navBackdrop");
+  const navClose = document.getElementById("navClose");
+  function closeNav() {
+    if (nav) nav.classList.remove("open");
+    if (backdrop) backdrop.classList.remove("open");
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   }
+  function openNav() {
+    if (nav) nav.classList.add("open");
+    if (backdrop) backdrop.classList.add("open");
+    if (toggle) toggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+  if (toggle) toggle.addEventListener("click", () => {
+    if (nav && nav.classList.contains("open")) closeNav(); else openNav();
+  });
+  if (navClose) navClose.addEventListener("click", closeNav);
+  if (backdrop) backdrop.addEventListener("click", closeNav);
+  if (nav) nav.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", closeNav)
+  );
 
   /* ---------- Reveal on scroll ---------- */
   const revealEls = document.querySelectorAll(".reveal");

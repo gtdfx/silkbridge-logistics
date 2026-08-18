@@ -17,18 +17,26 @@
   <div class="aurora"></div>
   <div class="grid-overlay"></div>
 
+  <div class="main-nav-backdrop" id="navBackdrop"></div>
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="Keraj Trading — home">
         <img src="assets/logo-header.png" alt="Keraj Trading" class="brand-img" />
       </a>
       <nav class="main-nav" id="mainNav">
+        <button class="mobile-nav-close" id="navClose" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
         <a href="index.html">Home</a>
         <a href="services.html" class="active">Services</a>
         <a href="quote.html">Get a Quote</a>
         <a href="tracking.html">Track Order</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
+        <div class="mobile-nav-cta">
+          <a href="quote.html" class="btn btn-primary">🔥 Get Free Quote</a>
+          <a href="tracking.html" class="btn btn-secondary">Track Order</a>
+        </div>
       </nav>
       <div class="nav-actions">
         <a href="quote.html" class="btn btn-primary btn-sm">Start Sourcing</a>
@@ -217,7 +225,7 @@
         </div>
         <div class="glass reveal" style="--d:.1s;padding:30px">
           <h3 style="font-size:1.15rem;margin-bottom:20px">Product categories</h3>
-          <div class="category-grid" style="grid-template-columns:1fr 1fr">
+          <div class="category-grid" >
             <div class="category-card" style="text-align:left;padding:14px"><div class="cat-icon" style="font-size:1.4rem">⚡</div><h4 style="font-size:.9rem">Electronics</h4><p style="font-size:12px">Consumer electronics, components, PCBs, IT hardware</p></div>
             <div class="category-card" style="text-align:left;padding:14px"><div class="cat-icon" style="font-size:1.4rem">🏗️</div><h4 style="font-size:.9rem">Construction</h4><p style="font-size:12px">Steel, tiles, sanitary ware, tools, heavy machinery</p></div>
             <div class="category-card" style="text-align:left;padding:14px"><div class="cat-icon" style="font-size:1.4rem">⚙️</div><h4 style="font-size:.9rem">Machinery</h4><p style="font-size:12px">Manufacturing equipment, CNC, packaging, automation</p></div>
@@ -240,7 +248,7 @@
         <h2 class="h2 reveal" style="--d:.05s">Sea, air &amp; trucking <span class="grad-text">door-to-door</span></h2>
         <p class="lead reveal" style="--d:.1s">The complete logistics chain — from your Chinese supplier's factory to your door, anywhere in the world. Sea and air freight, customs clearance and nationwide delivery.</p>
       </div>
-      <div class="services-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="services-grid" >
         <div class="card service-card reveal">
           <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21c.6-5 2-10 5-14M16 21c-2.4-2.6-4-5.4-5-8M5 21h14"/><path d="M12 2a8 8 0 0 1 8 8c0 3-1.5 5.5-4 7H8c-2.5-1.5-4-4-4-7a8 8 0 0 1 8-8z" opacity=".4"/></svg></div>
           <h3 class="card-title">Sea Freight · FCL / LCL</h3>

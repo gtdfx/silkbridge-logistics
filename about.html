@@ -17,18 +17,26 @@
   <div class="aurora"></div>
   <div class="grid-overlay"></div>
 
+  <div class="main-nav-backdrop" id="navBackdrop"></div>
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="Keraj Trading — home">
         <img src="assets/logo-header.png" alt="Keraj Trading" class="brand-img" />
       </a>
       <nav class="main-nav" id="mainNav">
+        <button class="mobile-nav-close" id="navClose" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="quote.html">Get a Quote</a>
         <a href="tracking.html">Track Order</a>
         <a href="about.html" class="active">About Us</a>
         <a href="contact.html">Contact</a>
+        <div class="mobile-nav-cta">
+          <a href="quote.html" class="btn btn-primary">🔥 Get Free Quote</a>
+          <a href="tracking.html" class="btn btn-secondary">Track Order</a>
+        </div>
       </nav>
       <div class="nav-actions">
         <a href="quote.html" class="btn btn-primary btn-sm">Start Sourcing</a>
@@ -70,7 +78,7 @@
         <div>
           <div class="glass" style="padding:30px">
             <h3 style="font-size:1.15rem;margin-bottom:20px">Keraj Trading by the numbers</h3>
-            <div class="stats-grid" style="grid-template-columns:1fr 1fr">
+            <div class="stats-grid" >
               <div class="stat-card" style="padding:20px"><div class="stat-num" style="font-size:2rem"><span data-count="12">0</span><sup>+</sup></div><div class="stat-lbl">Years sourcing from China</div></div>
               <div class="stat-card" style="padding:20px"><div class="stat-num" style="font-size:2rem"><span data-count="500">0</span><sup>+</sup></div><div class="stat-lbl">Verified suppliers</div></div>
               <div class="stat-card" style="padding:20px"><div class="stat-num" style="font-size:2rem"><span data-count="4800">0</span><sup>+</sup></div><div class="stat-lbl">Orders delivered</div></div>
@@ -108,7 +116,7 @@
         <h2 class="h2 reveal" style="--d:.05s">The people behind the <span class="grad-text">bridge</span></h2>
         <p class="lead reveal" style="--d:.1s">A bilingual, bi-cultural team — every sourcing project has someone accountable in China and someone accountable at your location.</p>
       </div>
-      <div class="team-grid" style="grid-template-columns:1fr 1fr">
+      <div class="team-grid" >
         <div class="glass team-card reveal">
           <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&auto=format" alt="Kelly Amenu" class="avatar" style="object-fit:cover" loading="lazy" />
           <h3>Kelly Amenu</h3>
