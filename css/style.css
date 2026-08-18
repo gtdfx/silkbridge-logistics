@@ -365,6 +365,7 @@ h1, h2, h3, h4 {
   margin-bottom: 2px;
 }
 
+.main-nav-backdrop { display: none; }
 .main-nav { display: flex; gap: 6px; }
 .main-nav a {
   position: relative;
@@ -1695,6 +1696,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .main-nav.open { transform: translateX(0); }
   .main-nav-backdrop {
+    display: block;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.4);
