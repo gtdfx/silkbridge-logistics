@@ -1706,17 +1706,22 @@ input[type="range"]::-webkit-slider-thumb {
     transition: opacity 0.35s var(--ease);
   }
   .main-nav-backdrop.open { opacity: 1; pointer-events: auto; }
-  .main-nav a {
+  .main-nav a,
+  .site-header.on-hero .main-nav a {
     font-size: 17px;
     padding: 14px 0;
     font-family: var(--font-d);
     font-weight: 600;
     color: #1a1a2e;
+    background: none;
+    border-radius: 0;
     border-bottom: 1px solid rgba(0,0,0,0.06);
     display: block;
   }
-  .main-nav a:hover { color: var(--ruby); background: none; }
-  .main-nav a.active { color: var(--gold); background: none; font-weight: 700; }
+  .main-nav a:hover,
+  .site-header.on-hero .main-nav a:hover { color: var(--ruby); background: none; }
+  .main-nav a.active,
+  .site-header.on-hero .main-nav a.active { color: var(--gold); background: none; font-weight: 700; }
   .nav-toggle { display: grid; }
   .nav-actions .btn { display: none; }
   .mobile-nav-close {
