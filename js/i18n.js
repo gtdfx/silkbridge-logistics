@@ -12,7 +12,7 @@ const translations = {
     /* Hero */
     "hero.eyebrow": "China → Worldwide · Sourcing · Logistics · Quality",
     "hero.title.pre": "Your trusted", "hero.title.highlight": "China",
-    "hero.title.mid": "sourcing agent — delivering", "hero.title.end": "worldwide.",
+    "hero.title.mid": "sourcing agent — delivering", "hero.title.end": "worldwide",
     "hero.lead": "We source, verify, inspect and deliver — from Chinese factories to your door, anywhere in the world.",
     "hero.cta1": "Start sourcing", "hero.cta2": "Explore services",
     /* Stats */
@@ -95,7 +95,7 @@ const translations = {
     "nav.start": "开始采购",
     "hero.eyebrow": "中国 → 全球 · 采购 · 物流 · 质量",
     "hero.title.pre": "您值得信赖的", "hero.title.highlight": "中国",
-    "hero.title.mid": "采购代理 — 服务", "hero.title.end": "全球。",
+    "hero.title.mid": "采购代理 — 服务", "hero.title.end": "全球",
     "hero.lead": "我们负责采购、验证、检验和交付 — 从中国工厂直达您家门口，覆盖全球任何地方。",
     "hero.cta1": "开始采购", "hero.cta2": "探索服务",
     "stats.suppliers": "我们网络中的认证中国供应商",
@@ -168,7 +168,7 @@ const translations = {
     "nav.start": "ግብይት ጀምር",
     "hero.eyebrow": "ቻይና → ዓለም አቀፍ · ግብይት · ሎጂስቲክስ · ጥራት",
     "hero.title.pre": "የእርስዎ ታማኝ", "hero.title.highlight": "ቻይና",
-    "hero.title.mid": "ግብይት ወኪል — ያቀርባል", "hero.title.end": "ዓለም አቀፍ።",
+    "hero.title.mid": "ግብይት ወኪል — ያቀርባል", "hero.title.end": "ዓለም አቀፍ",
     "hero.lead": "እንፈንግላለን፣ እናረጋግጣለን፣ እንፈትጣለን እና እንገብራለን — ከቻይና ፋብሪካዎች እስከ የእርስዎ በር፣ በዓለም ዛሬም ቦታ ላይ።",
     "hero.cta1": "ግብይት ጀምር", "hero.cta2": "አገልግሎቶች ያስሱ",
     "stats.suppliers": "በኔትዎርኩ ውስጥ ያሉ የተረጋገጡ ቻይና ሻጮች",
