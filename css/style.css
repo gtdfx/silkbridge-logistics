@@ -334,8 +334,7 @@ h1, h2, h3, h4 {
   background: rgba(255, 255, 255, 0.08);
 }
 .site-header.on-hero .brand-img {
-  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.5)) brightness(1.2);
-  mix-blend-mode: normal;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.5));
 }
 .nav-wrap {
   position: relative;
@@ -352,13 +351,11 @@ h1, h2, h3, h4 {
   gap: 12px;
 }
 .brand-img {
-  height: 48px;
+  height: 60px;
   width: auto;
-  max-width: 260px;
+  max-width: 320px;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(184, 134, 11, 0.15));
-  mix-blend-mode: screen;
 }
 .footer-brand .brand-img {
   height: 118px;
@@ -1846,8 +1843,8 @@ input[type="range"]::-webkit-slider-thumb {
 @media (max-width: 640px) {
   .container { width: min(var(--container), 100% - 36px); }
 
-  .brand-img { height: 44px; max-width: 200px; }
-  .footer-brand .brand-img { height: 96px; }
+  .brand-img { height: 52px; max-width: 220px; }
+  .footer-brand .brand-img { height: 120px; }
 
   .hero { padding: 100px 0 48px; }
   .hero h1 { font-size: clamp(1.4rem, 5.5vw, 1.9rem); margin-bottom: 16px; line-height: 1.15; }
