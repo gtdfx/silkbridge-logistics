@@ -364,6 +364,7 @@ h1, h2, h3, h4 {
 
 .main-nav-backdrop { display: none; }
 .mobile-nav-close { display: none; }
+.mobile-nav-cta { display: none; }
 .main-nav { display: flex; gap: 6px; }
 .main-nav a {
   position: relative;
@@ -1787,6 +1788,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .mobile-nav-close svg { width: 20px; height: 20px; }
   .mobile-nav-cta {
+    display: block;
     margin-top: auto;
     padding-top: 20px;
     border-top: 1px solid rgba(0,0,0,0.08);
