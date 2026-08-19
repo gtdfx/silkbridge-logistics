@@ -5,6 +5,20 @@
 (function () {
   "use strict";
 
+  /* ---------- Lenis smooth scroll ---------- */
+  if (typeof Lenis !== "undefined") {
+    const lenis = new Lenis({
+      autoRaf: true,
+      anchors: true,
+      autoToggle: true,
+      allowNestedScroll: true,
+    });
+    lenis.on("scroll", function (e) {
+      /* Sync with header scroll state */
+      if (typeof onScroll === "function") onScroll();
+    });
+  }
+
   /* ---------- Header scroll state ---------- */
   const header = document.getElementById("siteHeader");
   const progress = document.getElementById("scrollProgress");
