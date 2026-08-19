@@ -253,8 +253,6 @@ h1, h2, h3, h4 {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--shadow);
   position: relative;
 }
@@ -987,7 +985,7 @@ h1, h2, h3, h4 {
   gap: 24px;
   align-items: start;
 }
-.calc-panel { padding: clamp(24px, 3vw, 36px); }
+.calc-panel { padding: clamp(24px, 3vw, 36px); backdrop-filter: none; -webkit-backdrop-filter: none; pointer-events: auto; }
 .calc-field { margin-bottom: 24px; }
 .calc-field > label {
   display: block;
@@ -1018,6 +1016,9 @@ h1, h2, h3, h4 {
   cursor: pointer;
   transition: all 0.3s var(--ease);
   -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
 }
 .seg-btn small { font-size: 10.5px; font-weight: 500; opacity: 0.7; letter-spacing: 0.04em; }
 .seg-btn svg { width: 19px; height: 19px; }
@@ -1031,6 +1032,7 @@ select, .input {
   width: 100%;
   background: rgba(0, 0, 0, 0.025);
   border: 1px solid var(--line);
+  pointer-events: auto;
   border-radius: 13px;
   padding: 13px 16px;
   color: var(--text);
